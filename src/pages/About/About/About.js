@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../../../components/shared/Footer/Footer';
 import Navigation from '../../../components/shared/Navigation/Navigation';
 import AboutArea from '../../Home/Home/AboutArea/AboutArea';
-import AboutBanner from './AboutBanner/AboutBanner';
+// import AboutBanner from './AboutBanner/AboutBanner';
 import AboutFaq from './AboutFaq/AboutFaq';
 import AboutServices from './AboutServices/AboutServices';
 import AboutTestimonial from './AboutTestimonial/AboutTestimonial';
@@ -17,10 +17,10 @@ const About = () => {
             <AboutBreadcrumb />
             <AboutArea />
             <WorkingProcess />
-            <AboutFaq />
-            <AboutServices />
+            {/* <AboutFaq />
+            <AboutServices /> */}
             <AboutTestimonial />
-            <AboutBanner />
+            {/* <AboutBanner /> */}
             <Footer/>
         </>
     );

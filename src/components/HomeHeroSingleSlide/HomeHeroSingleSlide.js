@@ -15,11 +15,11 @@ const HomeHeroSingleSlide = ({ setOpen }) => {
                     <div className="row">
                         <div className="col-12">
                             <div className="tp-slider-wrapper mt-60 position-relative">
-                                <div className="tp-slider-video-btn play_btn">
+                                {/* <div className="tp-slider-video-btn play_btn">
                                     <button onClick={() => setOpen(true)} className="venobox" data-autoplay="true" data-vbtype="video" href="https://youtu.be/o4GuSJYSzrY">
                                         <i > <FaPlay className="text-white" /> </i>
                                     </button>
-                                </div>
+                                </div> */}
                                 <div className="tp-slider z-index">
 
                                     <Fade left>

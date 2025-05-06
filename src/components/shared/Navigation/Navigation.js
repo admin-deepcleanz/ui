@@ -27,7 +27,7 @@ const Navigation = () => {
                <div className="tp-header-top theme-dark-bg pt-20 pb-50 d-none d-xl-block">
                   <div className="tp-custom-container">
                      <div className="row align-items-center">
-                        <div className="col-xxl-4 col-xl-5">
+                        <div className="col-xxl-5 col-xl-5">
                            <div className="tp-header-top-info">
                               <div className="tp-header-top-info-single pr-40 mr-40 border-right-1">
                                  <div className="tp-header-top-info-single-icon mr-10">
@@ -35,7 +35,8 @@ const Navigation = () => {
                                  </div>
                                  <div className="tp-header-top-info-single-text">
                                     <span className="tp-header-top-info-single-label">Free Contact</span>
-                                    <span className="tp-header-top-info-single-content font-medium">41, South Lock St, Kotturpuram, Chennai - 85</span>
+                                    <span className="tp-header-top-info-single-content font-medium">41, South Lock St</span>
+                                    <span className="tp-header-top-info-single-content font-medium">Kotturpuram, Chennai - 85</span>
                                  </div>
                               </div>
                               <div className="tp-header-top-info-single">
@@ -49,13 +50,13 @@ const Navigation = () => {
                               </div>
                            </div>
                         </div>
-                        <div className="col-xxl-4 col-xl-2">
+                        <div className="col-xxl-2 col-xl-2">
                            <div className="header-logo text-center">
                               <Link to="/"><img src="assets/img/logo/logo-white.png" className="img-fluid" alt="logo not found" />
                               </Link>
                            </div>
                         </div>
-                        <div className="col-xxl-4 col-xl-5">
+                        <div className="col-xxl-5 col-xl-5">
                            <div className="tp-header-top-info justify-content-end">
                               <div className="tp-header-top-info-single mr-85">
                                  <div className="tp-header-top-info-single-icon tp-header-top-info-single-icon-call mr-10">

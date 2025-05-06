@@ -38,7 +38,7 @@ const Footer = () => {
             <div className="tp-footer-area-two pt-80 pb-50">
                <div className="container">
                   <div className="row">
-                     <div className="col-lg-3 col-sm-6">
+                     <div className="col-lg-4 col-sm-6">
                         <div className="tp-footer-widget footer-col-1 mb-30 wow fadeInUp" data-wow-delay=".3s">
                            <div className="tp-footer-info">
                               <div className="tp-footer-info-logo mb-35">
@@ -56,7 +56,7 @@ const Footer = () => {
                            </div>
                         </div>
                      </div>
-                     <div className="col-lg-3 col-sm-6">
+                     <div className="col-lg-4 col-sm-6">
                         <div className="tp-footer-widget footer-col-2 mb-30 wow fadeInUp" data-wow-delay=".6s">
                            <h4 className="tp-footer-widget-title mb-35">Our Services</h4>
                            <ul>
@@ -68,7 +68,7 @@ const Footer = () => {
                            </ul>
                         </div>
                      </div>
-                     <div className="col-lg-3 col-sm-6">
+                     {/* <div className="col-lg-3 col-sm-6">
                         <div className="tp-footer-widget footer-col-3 mb-30 wow fadeInUp" data-wow-delay=".9s">
                            <h4 className="tp-footer-widget-title mb-35">Recent News</h4>
                            <div className="tp-footer-news">
@@ -82,8 +82,8 @@ const Footer = () => {
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div className="col-lg-3 col-sm-6">
+                     </div> */}
+                     <div className="col-lg-4 col-sm-6">
                         <div className="tp-footer-widget footer-col-4 mb-30 wow fadeInUp" data-wow-delay="1.2s">
                            <h4 className="tp-footer-widget-title mb-40">Instagram</h4>
                            <div className="tp-footer-insta">

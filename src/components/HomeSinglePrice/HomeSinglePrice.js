@@ -2,7 +2,7 @@ import React from 'react';
 import { GiCheckMark } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 
-const HomeSinglePrice = ({icon_name,title,price}) => {
+const HomeSinglePrice = ({ icon_name, title, price, count }) => {
    return (
       <>
          <div className="col-xl-4 col-md-6 mb-30">
@@ -15,15 +15,15 @@ const HomeSinglePrice = ({icon_name,title,price}) => {
                <div className="tp-pricing-rate">
                   <div className="tp-pricing-rate-inner text-center">
                      <h4 className="tp-pricing-rate-subtitle mb-30">{title}</h4>
-                     <h2 className="tp-pricing-rate-title mb-45"><span>$</span>{price}</h2>
+                     <h2 className="tp-pricing-rate-title mb-45"><p>Starts at</p><span>₹</span>{price}</h2>
                   </div>
                </div>
                <div className="tp-pricing-list mb-45">
                   <ul>
-                     <li><i > <GiCheckMark/> </i> Carpet Cleaning</li>
-                     <li><i > <GiCheckMark/> </i> Bathroom Cleaning</li>
-                     <li><i > <GiCheckMark/> </i> Floor Cleaning</li>
-                     <li><i > <GiCheckMark/> </i> Bedroom Cleaning</li>
+                     <li><i > <GiCheckMark /> </i> {count} Bedroom Cleaning</li>
+                     <li><i > <GiCheckMark /> </i> {count} Bathroom Machine Deep Cleaning</li>
+                     <li><i > <GiCheckMark /> </i> Kitchen Full Deep Cleaning</li>
+                     <li><i > <GiCheckMark /> </i> Floor Moping</li>
                   </ul>
                </div>
                <div className="tp-pricing-btn">

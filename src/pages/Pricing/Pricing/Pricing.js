@@ -11,7 +11,7 @@ const Pricing = () => {
          <Navigation/>
          <PricingBreadcrumb />
          <PricingAffordablePackage />
-         <SpecialPricingPackage />
+         {/* <SpecialPricingPackage /> */}
          <Footer/>
       </>
    );

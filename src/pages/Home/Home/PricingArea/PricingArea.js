@@ -10,17 +10,17 @@ const PricingArea = () => {
                   <div className="col-md-8">
                      <div className="section-title-wrapper mb-55 wow fadeInUp" data-wow-delay=".2s">
                         <h5 className="tp-section-subtitle common-yellow-shape section__sm__title mb-20">Our Affordable Package</h5>
-                        <h2 className="tp-section-title">Special Pricing Package <br/>No Hidden Charge</h2>
+                        <h2 className="tp-section-title">Special Pricing Package</h2>
                      </div>
                   </div>
-                  <div className="col-md-4">
+                  {/* <div className="col-md-4">
                      <nav className="text-start text-md-end wow fadeInUp" data-wow-delay=".4s">
                         <div className="nav tp-pricing-tabs" id="nav-tab" role="tablist">
                            <button className="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Monthly</button>
                            <button className="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Yearly</button>
                         </div>
                      </nav>
-                  </div>
+                  </div> */}
                </div>
                <div className="row">
                   <div className="col-12">
@@ -28,15 +28,15 @@ const PricingArea = () => {
                         <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                            <div className="row">
 
-                              <HomeSinglePrice icon_name="mop" title="Residential" price="25.00" />
+                              <HomeSinglePrice icon_name="mop" title="1 BHK Unfurnished House" count="1"  price="2499" />
 
-                              <HomeSinglePrice icon_name="cleaning-1" title="Buildings" price="30.00" />
+                              <HomeSinglePrice icon_name="cleaning-1" title="2 BHK Unfurnished House" count="2" price="3799" />
 
-                              <HomeSinglePrice icon_name="vacuum-cleaner-1" title="Commercial" price="45.00" />
+                              <HomeSinglePrice icon_name="vacuum-cleaner-1" title="3 BHK Unfurnished House" count="3" price="4999" />
 
                            </div>
                         </div>
-                        <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        {/* <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                            <div className="row">
 
                               <HomeSinglePrice icon_name="mop" title="Residential" price="55.00" />
@@ -46,7 +46,7 @@ const PricingArea = () => {
                               <HomeSinglePrice icon_name="vacuum-cleaner-1" title="Commercial" price="95.00" />
 
                            </div>
-                        </div>
+                        </div> */}
                      </div>
                   </div>
                </div>

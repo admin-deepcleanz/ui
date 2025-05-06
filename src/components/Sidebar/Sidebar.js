@@ -38,8 +38,8 @@ const Sidebar = ({ show, handleClose }) => {
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/appointment">Appointment</NavLink></li>
                         <li><NavLink to="/pricing">Pricing</NavLink></li>
-                        <li><NavLink to="/team">Team</NavLink></li>
-                        <li><NavLink to="/teamDetails">Team Details</NavLink></li>
+                        {/* <li><NavLink to="/team">Team</NavLink></li>
+                        <li><NavLink to="/teamDetails">Team Details</NavLink></li> */}
                         <li><NavLink to="/faq">Faq</NavLink></li>
                      </ul>
                   </Collapsible>
@@ -52,7 +52,7 @@ const Sidebar = ({ show, handleClose }) => {
                      </ul>
                   </Collapsible>
 
-                  <Collapsible trigger={Projects} triggerTagName="div"
+                  {/* <Collapsible trigger={Projects} triggerTagName="div"
                      triggerOpenedClassName="icon_close" triggerClassName="iconAdd" open={false}>
                      <ul className="sidebar_sub_menu text-white mt-3">
                         <li><NavLink to="/projects">Projects</NavLink></li>
@@ -66,7 +66,7 @@ const Sidebar = ({ show, handleClose }) => {
                         <li><NavLink to="/blogSidebar">Blog Sidebar</NavLink></li>
                         <li><NavLink to="/blogDetails">Blog Details</NavLink></li>
                      </ul>
-                  </Collapsible>
+                  </Collapsible> */}
 
                   <div className='contact_nav text-white font-bold'>
                      <NavLink className="font-bold" to="/contact">Contact</NavLink>
@@ -81,8 +81,8 @@ const Sidebar = ({ show, handleClose }) => {
                                  <h4>Contact Info</h4>
                                  <ul>
                                     <li><i className="flaticon-pin"></i>28/4 Palmal, London</li>
-                                    <li><i className="flaticon-email"></i><a href="mailto:info@klenar.com">info@klenar.com</a></li>
-                                    <li><i className="flaticon-phone-call"></i><a href="tel:33388820055">333 888 200 - 55</a></li>
+                                    <li><i className="flaticon-email"></i><a href="mailto:info@deepcleanz.com">info@deepcleanz.com</a></li>
+                                    <li><i className="flaticon-phone-call"></i><a href="tel:+919363609470">+91 93636 09470</a></li>
                                  </ul>
                                  <div className="sidebar__menu--social">
                                     <a className="text-white" href="/"><i><FaFacebookF className='icon' /> </i></a>

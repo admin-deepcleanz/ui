@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import Sidebar from '../../Sidebar/Sidebar';
@@ -10,16 +10,16 @@ const Navigation = () => {
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
    // sticky state
-   const [sticky,setSticky] = useState(false);
+   const [sticky, setSticky] = useState(false);
    const stickyNavbar = () => {
-      if(window.scrollY > 80){
+      if (window.scrollY > 80) {
          setSticky(true)
       }
-      else{
+      else {
          setSticky(false)
       }
    }
-   window.addEventListener('scroll',stickyNavbar);
+   window.addEventListener('scroll', stickyNavbar);
    return (
       <>
          <header>
@@ -35,7 +35,7 @@ const Navigation = () => {
                                  </div>
                                  <div className="tp-header-top-info-single-text">
                                     <span className="tp-header-top-info-single-label">Free Contact</span>
-                                    <span className="tp-header-top-info-single-content font-medium">28/4 Palmal, London</span>
+                                    <span className="tp-header-top-info-single-content font-medium">41, South Lock St, Kotturpuram, Chennai - 85</span>
                                  </div>
                               </div>
                               <div className="tp-header-top-info-single">
@@ -44,7 +44,7 @@ const Navigation = () => {
                                  </div>
                                  <div className="tp-header-top-info-single-text">
                                     <span className="tp-header-top-info-single-label">Email us</span>
-                                    <a href="mailto:info@klenar.com" className="tp-header-top-info-single-content font-medium text-white">info@klenar.com</a>
+                                    <a href="mailto:info@deepcleanz.com" className="tp-header-top-info-single-content font-medium text-white">info@deepcleanz.com</a>
                                  </div>
                               </div>
                            </div>
@@ -62,8 +62,8 @@ const Navigation = () => {
                                     <i className="flaticon-phone-call"></i>
                                  </div>
                                  <div className="tp-header-top-info-single-text">
-                                    <span className="tp-header-top-info-single-label">Free Call</span>
-                                    <a href="tel:33388820055" className="tp-header-top-info-single-content font-medium text-white">333 888 200 - 55</a>
+                                    <span className="tp-header-top-info-single-label">Call Us</span>
+                                    <a href="tel:+919363609470" className="tp-header-top-info-single-content font-medium text-white">+91 93636 09470</a>
                                  </div>
                               </div>
                               <div className="tp-header-top-info-single">
@@ -77,7 +77,7 @@ const Navigation = () => {
                   </div>
                </div>
 
-               <div className={sticky ? "sticky-menu tp-header-menu-area tp-transparent-header-menu header-sticky" :"tp-header-menu-area tp-transparent-header-menu header-sticky"}>
+               <div className={sticky ? "sticky-menu tp-header-menu-area tp-transparent-header-menu header-sticky" : "tp-header-menu-area tp-transparent-header-menu header-sticky"}>
                   <div className="container">
                      <div className="row justify-content-xl-center align-items-center">
                         <div className="col-xl-2 col-8 tp-sticky-column">
@@ -91,23 +91,11 @@ const Navigation = () => {
                                  <nav id="tp-mobile-menu">
                                     <ul className="text-center">
                                        <li className="menu-item-has-children"><NavLink to="/">Home</NavLink>
-                                          <ul className="sub-menu">
-                                             <li><NavLink to="/">Home Style 1</NavLink></li>
-                                             <li><NavLink to="/homeTwo">Home Style 2</NavLink></li>
-                                             <li><NavLink to="/homeThree">Home Style 3</NavLink></li>
-                                          </ul>
-                                       </li>
-                                       <li className="menu-item-has-children">
-                                          <NavLink to="/about">Pages </NavLink>
-                                          <ul className="sub-menu">
-                                             <li><NavLink to="/about">About</NavLink></li>
-                                             <li><NavLink to="/appointment">Appointment</NavLink></li>
-                                             <li><NavLink to="/pricing">Pricing</NavLink></li>
-                                             <li><NavLink to="/team">Team</NavLink></li>
-                                             <li><NavLink to="/teamDetails">Team Details</NavLink>
-                                             </li>
-                                             <li><NavLink to="/faq">Faq</NavLink></li>
-                                          </ul>
+                                          {/* <ul className="sub-menu"> */}
+                                          {/* <li><NavLink to="/">Home Style 1</NavLink></li> */}
+                                          {/* <li><NavLink to="/homeTwo">Home Style 2</NavLink></li>
+                                             <li><NavLink to="/homeThree">Home Style 3</NavLink></li> */}
+                                          {/* </ul> */}
                                        </li>
                                        <li className="menu-item-has-children">
                                           <NavLink to="/services">Services </NavLink>
@@ -116,7 +104,7 @@ const Navigation = () => {
                                              <li><NavLink to="/servicesDetails">Services Details</NavLink></li>
                                           </ul>
                                        </li>
-                                       <li className="menu-item-has-children">
+                                       {/* <li className="menu-item-has-children">
                                           <NavLink to="/projects">Projects</NavLink>
                                           <ul className="sub-menu">
                                              <li><NavLink to="/projects">Projects</NavLink></li>
@@ -132,6 +120,20 @@ const Navigation = () => {
                                              <li><NavLink to="/blogDetails">Blog Details</NavLink>
                                              </li>
                                           </ul>
+                                       </li> */}
+                                       <li><NavLink to="/appointment">Appointment</NavLink></li>
+                                       <li><NavLink to="/pricing">Pricing</NavLink></li>
+                                       <li className="menu-item-has-children">
+                                          <NavLink to="/about">Pages </NavLink>
+                                          <ul className="sub-menu">
+                                             <li><NavLink to="/about">About</NavLink></li>
+                                             {/* <li><NavLink to="/appointment">Appointment</NavLink></li> */}
+                                             {/* <li><NavLink to="/pricing">Pricing</NavLink></li> */}
+                                             {/* <li><NavLink to="/team">Team</NavLink></li>
+                                             <li><NavLink to="/teamDetails">Team Details</NavLink>
+                                             </li> */}
+                                             <li><NavLink to="/faq">Faq</NavLink></li>
+                                          </ul>
                                        </li>
                                        <li><NavLink to="/contact">Contact</NavLink></li>
                                     </ul>
@@ -141,7 +143,7 @@ const Navigation = () => {
 
                               <div className="side-menu-icon d-xl-none text-end">
                                  <button onClick={handleShow} className="side-toggle border-0 bg-transparent">
-                                 <i> <FaBars className='bar_icon' /> </i></button>
+                                    <i> <FaBars className='bar_icon' /> </i></button>
                               </div>
                            </div>
                         </div>

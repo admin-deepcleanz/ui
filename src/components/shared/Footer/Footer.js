@@ -44,9 +44,9 @@ const Footer = () => {
                               <div className="tp-footer-info-logo mb-35">
                                  <Link to="/"><img src="assets/img/logo/logo-white.png" className="img-fluid" alt="img not found"/></Link>
                               </div>
-                              <h4 className="mb-15"><a href="tel:02(850)2560-3">02 (850) 2560 - 3</a></h4>
-                              <h6 className="mb-15"> <i > <FaEnvelopeOpen/> </i><a href="mailto:info@basictheme.com">info@basictheme.com</a></h6>
-                              <h6 className="mb-20"> <i> <FaMapMarkerAlt /> </i> 25/B Globe House Ave. Point Beach, New York</h6>
+                              <h4 className="mb-15"><a href="tel:+919363609470">+91 93636 09470</a></h4>
+                              <h6 className="mb-15"> <i > <FaEnvelopeOpen/> </i><a href="mailto:info@deepcleanz.com">info@deepcleanz.com</a></h6>
+                              <h6 className="mb-20"> <i> <FaMapMarkerAlt /> </i> 41, South Lock St, Kotturpuram, Chennai - 85</h6>
                               <div className="tp-footer-info-social">
                                  <a href="/"><i><FaFacebookF className='icon' /> </i></a>
                                  <a href="/"><i><BsTwitter className='icon' /> </i></a>
@@ -116,7 +116,7 @@ const Footer = () => {
                   <div className="row">
                      <div className="col-12">
                         <div className="tp-copyright tp-copyright-two text-center">
-                           <p className="m-0">Copyright ©2022 <span>Theme_pure</span>. All Rights Reserved Copyright</p>
+                           <p className="m-0">Copyright ©2025 <span>DeepCleanz</span>. All Rights Reserved Copyright</p>
                         </div>
                      </div>
                   </div>

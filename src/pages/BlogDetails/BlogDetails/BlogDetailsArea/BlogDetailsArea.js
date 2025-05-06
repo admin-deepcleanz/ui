@@ -26,7 +26,7 @@ const BlogDetailsArea = () => {
                                           <i> <AiOutlineCalendar className='blog_icon' /> </i> January 15, 2021 </Link>
                                        </li>
                                        <li><Link to="/blogDetails">
-                                          <i > <AiOutlineUser className='blog_icon' /> </i> Klenar </Link>
+                                          <i > <AiOutlineUser className='blog_icon' /> </i> DeepCleanz </Link>
                                        </li>
                                        <li><Link to="/blogDetails">
                                           <i > <FaRegComments className='blog_icon' /> </i> No Comments</Link>

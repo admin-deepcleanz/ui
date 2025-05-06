@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
             <div className="tp-footer-area-two pt-80 pb-50">
                <div className="container">
-                  <div className="row">
+                  <div className="row justify-content-around">
                      <div className="col-lg-4 col-sm-6">
                         <div className="tp-footer-widget footer-col-1 mb-30 wow fadeInUp" data-wow-delay=".3s">
                            <div className="tp-footer-info">
@@ -47,12 +47,12 @@ const Footer = () => {
                               <h4 className="mb-15"><a href="tel:+919363609470">+91 93636 09470</a></h4>
                               <h6 className="mb-15"> <i > <FaEnvelopeOpen/> </i><a href="mailto:info@deepcleanz.com">info@deepcleanz.com</a></h6>
                               <h6 className="mb-20"> <i> <FaMapMarkerAlt /> </i> 41, South Lock St, Kotturpuram, Chennai - 85</h6>
-                              <div className="tp-footer-info-social">
+                              {/* <div className="tp-footer-info-social">
                                  <a href="/"><i><FaFacebookF className='icon' /> </i></a>
                                  <a href="/"><i><BsTwitter className='icon' /> </i></a>
                                  <a href="/"><i><BsInstagram className='icon' /> </i></a>
                                  <a href="/"><i><AiOutlineGoogle className='icon' /> </i></a>
-                              </div>
+                              </div> */}
                            </div>
                         </div>
                      </div>
@@ -83,7 +83,7 @@ const Footer = () => {
                            </div>
                         </div>
                      </div> */}
-                     <div className="col-lg-4 col-sm-6">
+                     {/* <div className="col-lg-4 col-sm-6">
                         <div className="tp-footer-widget footer-col-4 mb-30 wow fadeInUp" data-wow-delay="1.2s">
                            <h4 className="tp-footer-widget-title mb-40">Instagram</h4>
                            <div className="tp-footer-insta">
@@ -107,7 +107,7 @@ const Footer = () => {
                                  </a>
                            </div>
                         </div>
-                     </div>
+                     </div> */}
                   </div>
                </div>
             </div>

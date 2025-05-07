@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SingleAppointmentFeature = ({icon,title}) => {
+const SingleAppointmentFeature = ({icon,title, content}) => {
     return (
         <>
             <div className="col-xl-3 col-sm-6">
@@ -13,7 +13,7 @@ const SingleAppointmentFeature = ({icon,title}) => {
                     <div className="tp-feature-three-text">
                         <h4 className="tp-feature-three-title mb-20 heading-color-black-with-hover">
                             <Link to="/projectsDetails">{title}</Link></h4>
-                        <p>Coingue aten lorem consqua interdum pretium ligaula a semper mauris easy dictuma</p>
+                        <p>{content}</p>
                     </div>
                 </div>
             </div>

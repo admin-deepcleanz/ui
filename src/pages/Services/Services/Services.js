@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../../../components/shared/Footer/Footer';
 import Navigation from '../../../components/shared/Navigation/Navigation';
 import ServicesArea from './ServicesArea/ServicesArea';
-import ServicesBrandLogos from './ServicesBrandLogo/ServicesBrandLogos';
+// import ServicesBrandLogos from './ServicesBrandLogo/ServicesBrandLogos';
 import ServicesBreadcrumb from './ServicesBreadcrumb/ServicesBreadcrumb';
 import ServicesPricing from './ServicesPricing/ServicesPricing';
 import ServicesTestimonials from './ServicesTestimonial/ServicesTestimonials';
@@ -14,7 +14,7 @@ const Services = () => {
             <ServicesBreadcrumb />
             <ServicesArea />
             <ServicesTestimonials />
-            <ServicesBrandLogos />
+            {/* <ServicesBrandLogos /> */}
             <ServicesPricing />
             <Footer/>
         </>

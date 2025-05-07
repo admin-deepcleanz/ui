@@ -47,27 +47,23 @@ const AppointmentFeedback = () => {
                            },
                         }}
                         navigation={{ nextEl: '.service-button-next', prevEl: '.service-button-prev', }}
-                        // onSlideChange={() => console.log('slide change')}
-                        // onSwiper={(swiper) => console.log(swiper)}
+                     // onSlideChange={() => console.log('slide change')}
+                     // onSwiper={(swiper) => console.log(swiper)}
                      >
                         <SwiperSlide>
-                           <AppointmentSingleFeedback image_num="2" title="Senior Designer" name="Petar Mansion" />
+                           <AppointmentSingleFeedback name="Madhan R" review="Super smooth process! I just sent a video, got a fair quote, and the cleaning team arrived right on time. Highly professional!" />
                         </SwiperSlide>
 
                         <SwiperSlide>
-                           <AppointmentSingleFeedback image_num="3" title="Senior Developer" name="Jhon Doe" />
+                           <AppointmentSingleFeedback name="Sankari" review="They don’t overpromise – just honest service and great results. My home feels brand new after their deep clean." />
                         </SwiperSlide>
 
                         <SwiperSlide>
-                           <AppointmentSingleFeedback image_num="4" title="Senior Designer" name="Shane Watson" />
+                           <AppointmentSingleFeedback name="Alex" review="Love how easy it was. No phone calls, no confusion. Just sent a WhatsApp video and everything else was handled perfectly." />
                         </SwiperSlide>
 
                         <SwiperSlide>
-                           <AppointmentSingleFeedback image_num="3" title="Senior Developer" name="Jhon Doe" />
-                        </SwiperSlide>
-
-                        <SwiperSlide>
-                           <AppointmentSingleFeedback image_num="2" title="Senior Designer" name="Petar Mansion" />
+                           <AppointmentSingleFeedback name="Ram" review="The flexible pricing based on my home’s condition really stood out. Worth every rupee. Will book again!" />
                         </SwiperSlide>
 
                         <div className="swiper-service-pagination slide-dots"></div>

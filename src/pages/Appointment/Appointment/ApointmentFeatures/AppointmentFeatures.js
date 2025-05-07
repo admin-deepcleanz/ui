@@ -16,10 +16,10 @@ const AppointmentFeatures = () => {
                </div>
                <div className="row">
                  
-                  <SingleAppointmentFeature icon="booking" title="Book Online" />
-                  <SingleAppointmentFeature icon="delivery-box" title="Received Data" />
-                  <SingleAppointmentFeature icon="boy" title="Ready Cleaner" />
-                  <SingleAppointmentFeature icon="cleaning" title="Start Cleaning" />
+                  <SingleAppointmentFeature icon="booking" title="1. Share Video/Photo" content="Send us a quick snap or video of the area you need cleaned." />
+                  <SingleAppointmentFeature icon="delivery-box" title="2. Get a Custom Quote" content="We’ll review the condition and send you a price based on the visuals—no fixed rates." />
+                  <SingleAppointmentFeature icon="boy" title="3. Approve & Schedule" content="Once you're happy with the quote, pick a convenient time slot." />
+                  <SingleAppointmentFeature icon="cleaning" title="4. Confirm Address" content="Share your exact location and any entry/access instructions." />
 
                </div>
             </div>

@@ -15,7 +15,7 @@ const AboutSinglePrice = ({ icon_name, title, price, count }) => {
                     <div className="tp-pricing-rate">
                         <div className="tp-pricing-rate-inner text-center">
                             <h4 className="tp-pricing-rate-subtitle mb-30">{title}</h4>
-                            <h2 className="tp-pricing-rate-title mb-45"><p>Starts at</p><span>$</span>{price}</h2>
+                            <h2 className="tp-pricing-rate-title mb-45"><p>Starts at</p><span>₹</span>{price}</h2>
                         </div>
                     </div>
                     <div className="tp-pricing-list mb-45">

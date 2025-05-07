@@ -49,23 +49,19 @@ const ServicesTestimonials = () => {
                         // onSwiper={(swiper) => console.log(swiper)}
                      >
                         <SwiperSlide>
-                           <ServiceTestimonial testi_img_num="2" title="Senior Designer"
-                              name="Petar Mansion"></ServiceTestimonial>
+                           <ServiceTestimonial name="Madhan R" review="Super smooth process! I just sent a video, got a fair quote, and the cleaning team arrived right on time. Highly professional!"></ServiceTestimonial>
                         </SwiperSlide>
 
                         <SwiperSlide>
-                           <ServiceTestimonial testi_img_num="3" title="Wp Developer"
-                              name="Broad Richard"></ServiceTestimonial>
+                           <ServiceTestimonial name="Sankari" review="They don’t overpromise – just honest service and great results. My home feels brand new after their deep clean."></ServiceTestimonial>
                         </SwiperSlide>
 
                         <SwiperSlide>
-                           <ServiceTestimonial testi_img_num="2" title="Senior Developer"
-                              name="Jhon Doe"></ServiceTestimonial>
+                           <ServiceTestimonial name="Alex" review="Love how easy it was. No phone calls, no confusion. Just sent a WhatsApp video and everything else was handled perfectly."></ServiceTestimonial>
                         </SwiperSlide>
 
                         <SwiperSlide>
-                           <ServiceTestimonial testi_img_num="3" title="Senior Designer"
-                              name="Shane Watson"></ServiceTestimonial>
+                           <ServiceTestimonial name="Ram" review="The flexible pricing based on my home’s condition really stood out. Worth every rupee. Will book again!"></ServiceTestimonial>
                         </SwiperSlide>
 
                      </Swiper>

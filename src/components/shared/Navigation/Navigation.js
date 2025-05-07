@@ -98,6 +98,7 @@ const Navigation = () => {
                                              <li><NavLink to="/homeThree">Home Style 3</NavLink></li> */}
                                           {/* </ul> */}
                                        </li>
+                                       <li><NavLink to="/about">About</NavLink></li>
                                        <li className="menu-item-has-children">
                                           <NavLink to="/services">Services </NavLink>
                                           <ul className="sub-menu">
@@ -122,20 +123,19 @@ const Navigation = () => {
                                              </li>
                                           </ul>
                                        </li> */}
-                                       <li><NavLink to="/appointment">Appointment</NavLink></li>
                                        <li><NavLink to="/pricing">Pricing</NavLink></li>
-                                       <li className="menu-item-has-children">
+                                       <li><NavLink to="/appointment">Appointment</NavLink></li>
+                                       {/* <li className="menu-item-has-children">
                                           <NavLink to="/about">Pages </NavLink>
                                           <ul className="sub-menu">
-                                             <li><NavLink to="/about">About</NavLink></li>
-                                             {/* <li><NavLink to="/appointment">Appointment</NavLink></li> */}
-                                             {/* <li><NavLink to="/pricing">Pricing</NavLink></li> */}
-                                             {/* <li><NavLink to="/team">Team</NavLink></li>
+                                             <li><NavLink to="/appointment">Appointment</NavLink></li>
+                                             <li><NavLink to="/pricing">Pricing</NavLink></li>
+                                             <li><NavLink to="/team">Team</NavLink></li>
                                              <li><NavLink to="/teamDetails">Team Details</NavLink>
-                                             </li> */}
+                                             </li>
                                              <li><NavLink to="/faq">Faq</NavLink></li>
                                           </ul>
-                                       </li>
+                                       </li> */}
                                        <li><NavLink to="/contact">Contact</NavLink></li>
                                     </ul>
                                  </nav>

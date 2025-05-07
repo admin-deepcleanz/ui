@@ -7,7 +7,7 @@ import Appointment from './pages/Appointment/Appointment/Appointment';
 import Pricing from './pages/Pricing/Pricing/Pricing';
 // import Team from './pages/Team/Team/Team';
 // import TeamDetails from './pages/TeamDetails/TeamDetails/TeamDetails';
-import Faq from './pages/Faq/Faq/Faq';
+// import Faq from './pages/Faq/Faq/Faq';
 import Services from './pages/Services/Services/Services';
 import ServicesDetails from './pages/ServicesDetails/ServicesDetails/ServicesDetails';
 // import Projects from './pages/Projects/Projects/Projetcs';
@@ -40,7 +40,7 @@ const App = () => {
           <Route path="/pricing" element={<Pricing />} />
           {/* <Route path="/team" element={<Team />} />
           <Route path="/teamDetails" element={<TeamDetails />} /> */}
-          <Route path="/faq" element={<Faq />} />
+          {/* <Route path="/faq" element={<Faq />} /> */}
           <Route path="/services" element={<Services />} />
           <Route path="/servicesDetails" element={<ServicesDetails />} />
           {/* <Route path="/projects" element={<Projects />} />

@@ -58,18 +58,19 @@ const AboutTestimonial = () => {
                                  // onSwiper={(swiper) => console.log(swiper)}
                               >
                                  <SwiperSlide>
-                                    <AboutSingleTestimonial testi_img_num="1" name="Rich Gragory"
-                                    title="Chief Marketing Manager" />
+                                    <AboutSingleTestimonial name="Madhan R" review="Super smooth process! I just sent a video, got a fair quote, and the cleaning team arrived right on time. Highly professional!" />
                                  </SwiperSlide>
 
                                  <SwiperSlide>
-                                    <AboutSingleTestimonial testi_img_num="2" name="Jhon Doe"
-                                    title="Chief Web Developer" />
+                                    <AboutSingleTestimonial name="Sankari" review="They don’t overpromise – just honest service and great results. My home feels brand new after their deep clean." />
                                  </SwiperSlide>
 
                                  <SwiperSlide>
-                                    <AboutSingleTestimonial testi_img_num="3" name="Shon Toy"
-                                    title="Chief Marketing Officer" />
+                                    <AboutSingleTestimonial name="Alex" review="Love how easy it was. No phone calls, no confusion. Just sent a WhatsApp video and everything else was handled perfectly." />
+                                 </SwiperSlide>
+
+                                 <SwiperSlide>
+                                    <AboutSingleTestimonial name="Ram" review="The flexible pricing based on my home’s condition really stood out. Worth every rupee. Will book again!" />
                                  </SwiperSlide>
 
                                  <div ref={prevRef}>Prev</div>

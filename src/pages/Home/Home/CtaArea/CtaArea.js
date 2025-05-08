@@ -29,14 +29,14 @@ const CtaArea = () => {
       if (!validateForm()) return;
 
       emailjs.send(
-         'your_service_id', // 🔁 Replace with your actual EmailJS service ID
-         'your_template_id', // 🔁 Replace with your actual EmailJS template ID
+         'service_rhxf3t4', // 🔁 Replace with your actual EmailJS service ID
+         'template_n15hlwv', // 🔁 Replace with your actual EmailJS template ID
          {
             name: formData.name,
             phone: formData.phone,
             service: formData.service,
          },
-         'your_user_id' // 🔁 Replace with your EmaiJS public key
+         'hiMSFqxH2h7sxvcAl' // 🔁 Replace with your EmaiJS public key
       ).then(
          (response) => {
             alert('Mail sent successfully!');

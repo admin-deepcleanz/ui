@@ -76,9 +76,12 @@ const CtaArea = () => {
                            <div className="tp-appoint select-field-arrow wow fadeInUp" data-wow-delay=".7s">
                               <select name="service" value={formData.service} onChange={handleChange}>
                                  <option value="">Service Name</option>
-                                 <option value="Commercial Service">Commercial Service</option>
-                                 <option value="Residential Service">Residential Service</option>
-                                 <option value="Industrial Service">Industrial Service</option>
+                                 <option value="Full House Deep Cleaning">Full House Deep Cleaning</option>
+                                 <option value="Kitchen Cleaning">Kitchen Cleaning</option>
+                                 <option value="Bedroom Cleaning">Bedroom Cleaning</option>
+                                 <option value="Bathroom Cleaning">Bathroom Cleaning</option>
+                                 <option value="Sofa Cleaning">Sofa Cleaning</option>
+                                 <option value="Carpet Cleaning">Carpet Cleaning</option>
                               </select>
                               {errors.service && <p className="text-danger">{errors.service}</p>}
                            </div>

@@ -48,13 +48,13 @@ const Sidebar = ({ show, handleClose }) => {
                      </ul>
                   </Collapsible> */}
 
-                  <Collapsible trigger={Services} triggerTagName="div"
+                  {/* <Collapsible trigger={Services} triggerTagName="div"
                      triggerOpenedClassName="icon_close" triggerClassName="iconAdd" open={false}>
                      <ul className="sidebar_sub_menu text-white mt-3">
                         <li><NavLink to="/services">Services</NavLink></li>
                         <li><NavLink to="/servicesDetails">Services Details</NavLink></li>
                      </ul>
-                  </Collapsible>
+                  </Collapsible> */}
 
                   <div className='pricing_nav text-white font-bold mb-3'>
                      <NavLink className="font-bold" to="/pricing">Pricing</NavLink>

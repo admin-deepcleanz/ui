@@ -99,13 +99,13 @@ const Navigation = () => {
                                           {/* </ul> */}
                                        </li>
                                        <li><NavLink to="/about">About</NavLink></li>
-                                       <li className="menu-item-has-children">
+                                       {/* <li className="menu-item-has-children">
                                           <NavLink to="/services">Services </NavLink>
                                           <ul className="sub-menu">
                                              <li><NavLink to="/services">Services</NavLink></li>
                                              <li><NavLink to="/servicesDetails">Services Details</NavLink></li>
                                           </ul>
-                                       </li>
+                                       </li> */}
                                        {/* <li className="menu-item-has-children">
                                           <NavLink to="/projects">Projects</NavLink>
                                           <ul className="sub-menu">

@@ -53,7 +53,7 @@ const ServicesTestimonials = () => {
                         </SwiperSlide>
 
                         <SwiperSlide>
-                           <ServiceTestimonial name="Sankari" review="They don’t overpromise – just honest service and great results. My home feels brand new after their deep clean."></ServiceTestimonial>
+                           <ServiceTestimonial name="Rajeswari" review="They don’t overpromise – just honest service and great results. My home feels brand new after their deep clean."></ServiceTestimonial>
                         </SwiperSlide>
 
                         <SwiperSlide>

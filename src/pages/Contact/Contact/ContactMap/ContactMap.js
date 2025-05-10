@@ -3,7 +3,7 @@ import React from 'react';
 const ContactMap = () => {
    return (
       <>
-         <div className="tp-map-area pt-120 pb-115">
+         <div className="tp-map-area pt-50 pb-90">
             <div className="container">
                 <div className="row">
                     <div className="col-12">

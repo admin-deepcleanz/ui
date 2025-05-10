@@ -10,8 +10,8 @@ const Contact = () => {
       <>
          <Navigation />
          <ContactBreadcrumb />
-         <ContactMap />
          <ContactForm />
+         <ContactMap />
          <Footer />
 
       </>

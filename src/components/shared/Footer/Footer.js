@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaPaperPlane } from 'react-icons/fa';
-import { FaMapMarkerAlt, FaEnvelopeOpen,FaFacebookF } from 'react-icons/fa';
-import { AiOutlineGoogle } from 'react-icons/ai';
-import { BsTwitter, BsInstagram } from 'react-icons/bs';
+// import { FaMapMarkerAlt, FaEnvelopeOpen, FaFacebookF } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelopeOpen } from 'react-icons/fa';
+// import { AiOutlineGoogle } from 'react-icons/ai';
+// import { BsTwitter, BsInstagram } from 'react-icons/bs';
 
 const Footer = () => {
    return (

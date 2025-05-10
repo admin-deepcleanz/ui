@@ -12,8 +12,8 @@ const Appointment = () => {
         <>
             <Navigation/>
             <AppointmentBreadcrumb />
-            <AppointmentFeatures />
             <ApointArea />
+            <AppointmentFeatures />
             <AppointmentFeedback />
             <Footer/>
         </>

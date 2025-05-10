@@ -8,7 +8,7 @@ const ContactForm = () => {
         name: '',
         email: '',
         phone: '',
-        subject: '',
+        service: '',
         message: ''
     });
     const [error, setError] = useState('');
@@ -25,9 +25,9 @@ const ContactForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const { name, email, phone, subject } = formData;
+        const { name, email, phone, service } = formData;
 
-        if (!name || !email || !phone || !subject) {
+        if (!name || !email || !phone || !service) {
             setError('Please fill all required fields.');
             return;
         }
@@ -51,7 +51,7 @@ const ContactForm = () => {
             () => {
                 setSuccess('Message sent successfully!');
                 setError('');
-                setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+                setFormData({ name: '', email: '', phone: '', service: '', message: '' });
             },
             () => {
                 setError('Something went wrong. Please try again.');
@@ -61,7 +61,7 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="tp-contact-area pb-120">
+        <section className="tp-contact-area pt-60 pb-60">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-10">
@@ -134,8 +134,8 @@ const ContactForm = () => {
                                     </div>
                                     <div className="col-md-6 custom-pad-20">
                                         <div className="tp-contact-form-field select-field-arrow mb-20">
-                                            <select name="subject" value={formData.subject} onChange={handleChange}>
-                                                <option value="">Choose Subject</option>
+                                            <select name="service" value={formData.service} onChange={handleChange}>
+                                                <option value="">Choose Service</option>
                                                 <option value="Full House Deep Cleaning">Full House Deep Cleaning</option>
                                                 <option value="Kitchen Cleaning">Kitchen Cleaning</option>
                                                 <option value="Bedroom Cleaning">Bedroom Cleaning</option>

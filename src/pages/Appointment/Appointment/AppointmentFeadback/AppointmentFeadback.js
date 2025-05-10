@@ -55,7 +55,7 @@ const AppointmentFeedback = () => {
                         </SwiperSlide>
 
                         <SwiperSlide>
-                           <AppointmentSingleFeedback name="Sankari" review="They don’t overpromise – just honest service and great results. My home feels brand new after their deep clean." />
+                           <AppointmentSingleFeedback name="Rajeswari" review="They don’t overpromise – just honest service and great results. My home feels brand new after their deep clean." />
                         </SwiperSlide>
 
                         <SwiperSlide>

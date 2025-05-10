@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPlay } from 'react-icons/fa';
+// import { FaPlay } from 'react-icons/fa';
 import { Fade } from 'react-reveal';
 import { Link } from 'react-router-dom';
 

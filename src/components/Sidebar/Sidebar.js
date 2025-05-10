@@ -4,12 +4,12 @@ import { NavLink } from 'react-router-dom';
 // import { FaFacebookF } from 'react-icons/fa';
 // import { AiOutlineGoogle } from 'react-icons/ai';
 // import { BsTwitter, BsInstagram } from 'react-icons/bs';
-import Collapsible from 'react-collapsible';
+// import Collapsible from 'react-collapsible';
 
 const Sidebar = ({ show, handleClose }) => {
    // const Home = <NavLink to="/home">Home</NavLink>
    // const Pages = <NavLink to="/">Pages </NavLink>
-   const Services = <NavLink to="/services">Services </NavLink>
+   // const Services = <NavLink to="/services">Services </NavLink>
    // const Projects = <NavLink to="/projects">Projects</NavLink>
    // const Blog = <NavLink to="/blogSidebar">Blog</NavLink>
    return (

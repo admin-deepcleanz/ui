@@ -17,6 +17,7 @@ import Pricing from './pages/Pricing/Pricing/Pricing';
 import Contact from './pages/Contact/Contact/Contact';
 import { WOW } from 'wowjs';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppButton from './components/WhatsappButton/WhatsAppButton';
 // import HomeTwo from './pages/HomeTwo/HomeTwo/HomeTwo';
 // import HomeThree from './pages/HomeThree/HomeThree/HomeThree';
 
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
+      <WhatsAppButton />
     </>
   );
 };

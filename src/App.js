@@ -8,8 +8,8 @@ import Pricing from './pages/Pricing/Pricing/Pricing';
 // import Team from './pages/Team/Team/Team';
 // import TeamDetails from './pages/TeamDetails/TeamDetails/TeamDetails';
 // import Faq from './pages/Faq/Faq/Faq';
-// import Services from './pages/Services/Services/Services';
-// import ServicesDetails from './pages/ServicesDetails/ServicesDetails/ServicesDetails';
+import Services from './pages/Services/Services/Services';
+import ServicesDetails from './pages/ServicesDetails/ServicesDetails/ServicesDetails';
 // import Projects from './pages/Projects/Projects/Projetcs';
 // import ProjectsDetails from './pages/ProjectsDetails/ProjectsDetails/ProjectsDetails';
 // import BlogsSidebar from './pages/BlogsSidebar/BlogsSidebar/BlogsSidebar';
@@ -17,7 +17,7 @@ import Pricing from './pages/Pricing/Pricing/Pricing';
 import Contact from './pages/Contact/Contact/Contact';
 import { WOW } from 'wowjs';
 import ScrollToTop from './components/ScrollToTop';
-import WhatsAppButton from './components/WhatsappButton/WhatsAppButton';
+import ContactButtons from './components/ContactButtons/ContactButtons';
 // import HomeTwo from './pages/HomeTwo/HomeTwo/HomeTwo';
 // import HomeThree from './pages/HomeThree/HomeThree/HomeThree';
 
@@ -42,8 +42,8 @@ const App = () => {
           {/* <Route path="/team" element={<Team />} />
           <Route path="/teamDetails" element={<TeamDetails />} /> */}
           {/* <Route path="/faq" element={<Faq />} /> */}
-          {/* <Route path="/services" element={<Services />} />
-          <Route path="/servicesDetails" element={<ServicesDetails />} /> */}
+          <Route path="/services" element={<Services />} />
+          <Route path="/servicesDetails" element={<ServicesDetails />} />
           {/* <Route path="/projects" element={<Projects />} />
           <Route path="/projectsDetails" element={<ProjectsDetails />} />
           <Route path="/blogSidebar" element={<BlogsSidebar />} />
@@ -51,7 +51,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
-      <WhatsAppButton />
+      <ContactButtons />
     </>
   );
 };

@@ -56,6 +56,14 @@ const Sidebar = ({ show, handleClose }) => {
                      </ul>
                   </Collapsible> */}
 
+                  <div className='about_nav text-white font-bold mb-3'>
+                     <NavLink className="font-bold" to="/about">About</NavLink>
+                  </div>
+
+                  <div className='services_nav text-white font-bold mb-3'>
+                     <NavLink className="font-bold" to="/servicesDetails">Services</NavLink>
+                  </div>
+
                   <div className='pricing_nav text-white font-bold mb-3'>
                      <NavLink className="font-bold" to="/pricing">Pricing</NavLink>
                   </div>

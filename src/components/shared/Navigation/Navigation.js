@@ -99,6 +99,7 @@ const Navigation = () => {
                                           {/* </ul> */}
                                        </li>
                                        <li><NavLink to="/about">About</NavLink></li>
+                                       <li><NavLink to="/servicesDetails">Services</NavLink></li>
                                        {/* <li className="menu-item-has-children">
                                           <NavLink to="/services">Services </NavLink>
                                           <ul className="sub-menu">

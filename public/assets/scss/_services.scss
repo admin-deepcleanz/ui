@@ -645,3 +645,12 @@
     background: #06ae5a;
     color: #ffffff;
 }
+
+.category-img-zoom {
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.category-img-zoom:hover {
+  transform: scale(1.08);
+}

@@ -13,9 +13,9 @@ const HomeServiceItem = ({ icon_name, title, content }) => {
                   <h4 className="tp-services-text-title mb-15 hover-theme-color">
                      <Link to="/servicesDetails">{title}</Link></h4>
                   <p className="mb-20">{content}</p>
-                  {/* <div className="tp-services-text-link">
+                  <div className="tp-services-text-link">
                      <Link to="/servicesDetails"><i className="flaticon-enter"></i> Read Details</Link>
-                  </div> */}
+                  </div>
                </div>
             </div>
          </div>

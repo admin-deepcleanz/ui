@@ -1,12 +1,147 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModalVideo from 'react-modal-video';
 import 'react-modal-video/scss/modal-video.scss';
-import { FaArrowAltCircleRight, FaPlay} from 'react-icons/fa';
-import { CgCheckO } from 'react-icons/cg';
+import { FaArrowRight, FaPlay } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+
+const categories = [
+  {
+    id: 'full-house',
+    title: 'Full House Deep Cleaning',
+    image: 'assets/img/service/full-house.jpg',
+    doList: [
+      'Complete cleaning of living rooms, bedrooms, kitchens, and bathrooms',
+      'Dusting of furniture, fans, and light fixtures',
+      'Window and grill cleaning (interior)',
+      'Mopping and vacuuming of floors',
+      'Cleaning exterior surfaces of appliances',
+    ],
+    dontList: [
+      'Interior appliance cleaning (e.g., inside ovens, fridges)',
+      'Painting or wall repair',
+      'Plumbing or electrical repairs',
+    ],
+  },
+  {
+    id: 'kitchen',
+    title: 'Kitchen Cleaning',
+    image: 'assets/img/service/kitchen.jpg',
+    doList: [
+      'Wiping countertops and tile backsplash',
+      'Cleaning stove tops and chimney exterior',
+      'Sink scrubbing and disinfecting',
+      'Cleaning exterior of cabinets',
+      'Floor mopping and degreasing',
+    ],
+    dontList: [
+      'Cleaning inside cabinets (unless pre-approved)',
+      'Handling broken pipes or leakage',
+      'Chimney dismantling or internal deep cleaning',
+    ],
+  },
+  {
+    id: 'bathroom',
+    title: 'Bathroom Cleaning',
+    image: 'assets/img/service/bathroom.png',
+    doList: [
+      'Cleaning WC, wash basins, and tiles',
+      'Disinfecting taps, showers, and faucets',
+      'Mirror and exhaust fan cleaning',
+      'Removal of stains and floor scrubbing',
+    ],
+    dontList: [
+      'Plumbing repair or unclogging drains',
+      'Broken tile/grout restoration',
+      'Replacement of fittings or hardware',
+    ],
+  },
+  {
+    id: 'bedroom',
+    title: 'Bedroom Cleaning',
+    image: 'assets/img/service/bedroom.jpg',
+    doList: [
+      'Dusting and wiping surfaces, furniture, and decor',
+      'Window glass and sill cleaning (interior)',
+      'Mirror polishing and cobweb removal',
+      'Floor vacuuming and mopping',
+    ],
+    dontList: [
+      'Interior wardrobe cleaning (unless pre-requested)',
+      'Moving heavy or delicate furniture without assistance',
+      'Electrical fixture repair',
+    ],
+  },
+  {
+    id: 'sofa',
+    title: 'Sofa Cleaning',
+    image: 'assets/img/service/sofa.jpg',
+    doList: [
+      'Vacuuming dust and debris from sofa surface and gaps',
+      'Shampooing and foam treatment (fabric only)',
+      'Mild spot stain treatment',
+    ],
+    dontList: [
+      'Repairing sofa structure or springs',
+      'Deep leather treatment (unless pre-approved)',
+      'Guarantee of 100% stain removal',
+    ],
+  },
+  {
+    id: 'mattress',
+    title: 'Mattress Cleaning',
+    image: 'assets/img/service/mattress.jpg',
+    doList: [
+      'Dry vacuuming to remove dust mites',
+      'Steam sanitization for hygiene',
+      'Odor and allergen reduction',
+    ],
+    dontList: [
+      'Washing or soaking the mattress',
+      'Instant drying (drying time needed post-cleaning)',
+      'Treating mold or deep stains that have penetrated layers',
+    ],
+  },
+  {
+    id: 'commercial',
+    title: 'Commercial Cleaning',
+    image: 'assets/img/service/commercial.jpg',
+    doList: [
+      'Cleaning of office desks, chairs, and common surfaces',
+      'Sanitization of restrooms and break areas',
+      'Mopping and vacuuming of floors',
+      'Glass and window partition cleaning',
+    ],
+    dontList: [
+      'Industrial machinery cleaning',
+      'High-rise facade glass cleaning',
+      'Repairs or hazardous waste removal',
+    ],
+  },
+];
+
 
 const ServicesDetailsFaq = () => {
   const [isOpen, setOpen] = useState(false);
+
+const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  const offset = 80; // adjust based on your header height
+  if (section) {
+    const y = section.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+};
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   return (
     <>
       <ModalVideo channel='youtube' autoplay isOpen={isOpen}
@@ -17,62 +152,72 @@ const ServicesDetailsFaq = () => {
           <div className="row">
             <div className="col-xl-3 col-lg-4">
               <div className="tp-faqs-left">
-                <div className="tp-faqs-left-sidebar tp-services-sidebar mb-30">
-                  <h4 className="tp-faqs-left-sidebar-title">Category...</h4>
-                  <ul>
-                    <li><a href="#">Carpet Cleaning <i> <FaArrowAltCircleRight /> </i> </a></li>
-                    <li><a href="#">House Cleaning <i> <FaArrowAltCircleRight /> </i> </a></li>
-                    <li><a href="#">Road Cleaning <i> <FaArrowAltCircleRight /> </i> </a></li>
-                    <li><a href="#">Kitchen Cleaning <i> <FaArrowAltCircleRight /> </i> </a></li>
-                    <li><a href="#">Toilet Cleaning <i> <FaArrowAltCircleRight /> </i> </a></li>
-                    <li><a href="#">Office Cleaning <i> <FaArrowAltCircleRight /> </i> </a></li>
-                  </ul>
-                </div>
-                <div className="tp-faqs-left-img mb-30">
-                  <a href="#"><img src="assets/img/about/faq-img-1.jpg" className="img" alt="img not found" /></a>
-                </div>
-                <div className="tp-faqs-left-sidebar tp-services-sidebar mb-30">
-                  <h4 className="tp-faqs-left-sidebar-title mb-30">Category...</h4>
-                  <div className="tp-services-sidebar-btn">
-                    <a href="#" className="mb-15 text-white"><i className="flaticon-pdf-file"></i> Presentation</a>
-                    <a href="#" className="mb-10 text-white"><i className="flaticon-file"></i> Download.txt</a>
+                <div className="tp-faqs-left-sidebar tp-services-sidebar mb-30 p-3 bg-white rounded-4 shadow-sm">
+                  <h4 className="tp-faqs-left-sidebar-title mb-4 fw-bold">Explore Our Services</h4>
+                  <div className="d-grid gap-2">
+                    {categories.map((cat) => (
+                      <button
+                        key={cat.id}
+                        onClick={() => scrollToSection(cat.id)}
+                        className="btn btn-outline-dark d-flex align-items-center justify-content-between px-3 py-2 rounded-pill text-start"
+                        style={{ fontSize: '15px', transition: 'all 0.3s' }}
+                      >
+                        <span>{cat.title}</span>
+                        <FaArrowRight />
+                      </button>
+                    ))}
                   </div>
                 </div>
+
               </div>
             </div>
+
             <div className="col-xl-9 col-lg-8">
               <div className="tp-service-details">
-                <div className="row">
-                  <div className="col-sm-6">
-                    <div className="tp-service-details-img mb-30">
-                      <img src="assets/img/service/service-details-1.jpg" alt="img not found" />
-                    </div>
-                  </div>
-                  <div className="col-sm-6">
-                    <div className="tp-service-details-img mb-30">
-                      <img src="assets/img/service/service-details-2.jpg" alt="img not found" />
-                    </div>
-                  </div>
-                </div>
                 <h2 className="tp-section-title heading-color-black pt-10 mb-20">Making A Clean Difference</h2>
-                <p className="mb-20">Fusce fusce ante dis varius iaculis quis penatibus do placerat et convallis ultricies egestas hacker pharetra veile litora nascetur diam dapibus euismod neque sapien siverra nunc nisler fortune litora neque ultrices eros aenean habitant tellus torquent ipsum, commodo Ligula curae; auctor ultricies laoreet metus cubilia enim faucibus litora nibh torquent platea sodales auctor gravida tortor class litora id arcu conubia. Augue suscipit metus ante eu rhoncus cras. Ipsum nulla feugiat nam pede cras a eleifend. Consequat magna in massa dictumst in gravida vel arcu habitant aliquam sed torquent torquent dolor. Diam tortor. Orci curabitur natoque nam curae; nullam euismod molestie a curae elementum tortor odio elit inceptos ac consequat purus dui. Ad mollis eget nullam. Nulla neque turpis interdum hymenaeos pretium blandit. Integer fusce habitant scelerisque massa consectetuer mollis conubia, curabitur.</p>
-                <p className="mb-35">Neque gravida dui fermentum pulvinar fringilla sodales massa hendrerit nascetur. Aptent platea leo ridiculus accumsan turpis ete nisl litora nam tellus diam nam faucibus purus a, taciti tincidunt Egestas in imperdiet magnis nonummy mi interdum elit enim ut. Curabitur quis vitae lobortis quam lacus pharetra mus, arcu. Vele Facilisi orci orci nisi consequat dignissim duise in iaculis pulvinar hymenaeos pharetra tortor phasellus. Consectetuer penatibus id. Eleifend potenti. Elit purus fermentum idev posuere nullam iaculis. Fusce orci co nsectetuer. Metus nonummy turpis sodales vivamus mollis posuere fermentum </p>
-                <h3 className="tp-service-details-subtitle">Service Overview</h3>
-                <p className="mb-40">Quisque maorbi gravida, enim hendrerit nunc feugiat vehicula fringilla. Ridiculus sapien curabitur. Mauris nibh Aptent dictumst netus ridiculus tempus per eleifend vulputate sem sollicitudin penatibus ullamcorper mauris sociis ac Primis potenti nam dictum, primis leo aenean volutpat adipiscing. Metus, elit. Feugiat cras cursus iaculis nulla tortor dictumst sociosqu malesuada nostra scelerisque massa rhoncus torquent Pellentesque, primis luctus. Donec eget vivamus integer. Class habitasse tempor arcu a congue eleifend maecenas potenti nascetur. Senectus netus dolor donec arcu nisi malesuada erat a mattis, fames. Ut vestibulum enim tincidunt varius ligula mi conubia quisque pretium bibendum. Mauris montes fusce dolor leo aliquet tempus felis.</p>
-                <div className="tp-service-details-img mb-30 position-relative">
-                  <img src="assets/img/service/service-details-3.jpg" alt="img not found" />
-                  <div className="tp-service-details-img-overlay">
-                    <div className="tp-service-details-img-overlay-icon">
-                      <button onClick={() => setOpen(true)} className="venobox" data-autoplay="true" data-vbtype="video" href="https://youtu.be/o4GuSJYSzrY">
-                        <i > <FaPlay className="text-white" /> </i>
-                      </button>
+                <p className="mb-40">Our professional cleaning services are designed to refresh and revitalize your space. We use eco-friendly products and modern tools to ensure top-quality results for every corner of your home or office.</p>
+
+                {categories.map((cat) => (
+                  <div id={cat.id} key={cat.id} className="mb-60">
+                    <div className="card border-0 shadow-sm overflow-hidden rounded-4 mb-4">
+                      <div className="row g-0 align-items-center">
+                        <div className="col-md-5">
+                          <div className="overflow-hidden rounded-start-4">
+                            <img
+                              src={cat.image}
+                              alt={cat.title}
+                              className="img-fluid category-img-zoom"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-7">
+                          <div className="card-body px-4 py-3">
+                            <h3 className="text-dark fw-semibold mb-3">{cat.title}</h3>
+                            <div className="mb-2">
+                              <strong className="text-success">What’s Included ✅</strong>
+                              <ul className="text-muted ps-3 mt-2" style={{ listStyleType: 'disc' }}>
+                                {cat.doList.map((item, idx) => (
+                                  <li key={`do-${idx}`}>{item}</li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <strong className="text-danger">What’s Not Included ❌</strong>
+                              <ul className="text-muted ps-3 mt-2" style={{ listStyleType: 'disc' }}>
+                                {cat.dontList.map((item, idx) => (
+                                  <li key={`dont-${idx}`}>{item}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <p className="mb-25 d-flex"> <i > <CgCheckO /> </i> Imperdiet. Iaculis bibendum platea feugiat erat commodo maecenas sociosqu varius nunc litora fringilla Tincidunt ad neque vitae duis mus phasellus pede rutrum rutrum massa dis purus magnis senectus ridiculus vestibulum. Cursus accumsan praes tesque massa consectetuer etiam laoreet velit sagittis erat Inceptos</p>
-                <p className="mb-35 d-flex"> <i > <CgCheckO /> </i> Commodo maecenas sociosqu, varius nunc litora fringilla Tincidunt ad neque vitae duis mus phasellus pede rutrum rutrum massa  purus magnis senectus ridiculus vestibulum praes tesque massa consectetuer </p>
-                <h3 className="tp-service-details-subtitle mb-20">Why Choose us</h3>
-                <p className="mb-35">Sem sollicitudin penatibus ullamcorper mauris sociis ac primis potenti nam dictum, primis leo aenean volutpat adipiscing metus elite Feugiat cras cursus iaculis nulla tortor dictumst sociosqu malesuada nostra scelerisque</p>
+                ))}
+
+                <h3 className="tp-service-details-subtitle mb-20">Why Choose Us</h3>
+                <p className="mb-35">Trained staff, reliable service, transparent pricing, eco-friendly cleaning agents, and 100% satisfaction guarantee. We’re here to make your space shine – every time!</p>
                 <div className="row">
                   <div className="col-xl-4 col-md-6">
                     <div className="tp-service-details-feature text-center bg-gray-light mb-40">
@@ -91,7 +236,7 @@ const ServicesDetailsFaq = () => {
                         <i className="flaticon-delivery-box"></i>
                       </div>
                       <h4 className="tp-service-details-feature-title">
-                        <Link to="/servicesDetails">Customer Support <br />Live Chat</Link></h4>
+                        <Link to="/servicesDetails">Customer Support <br />WhatsApp Chat</Link></h4>
                     </div>
                   </div>
                   <div className="col-xl-4 col-md-6">
@@ -105,21 +250,9 @@ const ServicesDetailsFaq = () => {
                     </div>
                   </div>
                 </div>
-                <h3 className="tp-service-details-subtitle mb-20">For Sparkling Results</h3>
-                <p className="mb-40">Curae tincidunt posuere ad tristique fusce nam quisque in pretium morbi risus orci volutpat non in quam cum praesent auctor tellus penatibus orci litora donec posuere etiam commodo fermentum ultricies habitant scelerisque. Ipsum torquent venenatis congue biben dum mauris. A egestas primis convallis dictum phasellus laoreet magnis felis iaculis vel parturient interdum conubia adse accumsan pharetra enim dictumst. Tincidunt massa amet magna facilisi quis convallis congue. Fringilla aliquet dolor gravida class libero cubilia pulvinar etiam platea ace. Elementum eu eget vulputate curabitur vestibulum feugiat sociosqu lacinia porta viverra mollis magnis rutrum bibendum proin facilisi duis consequat risus sociosqu volutpat proin.</p>
-                <div className="row">
-                  <div className="col-xl-6">
-                    <div className="tp-service-details-img mb-30">
-                      <img src="assets/img/service/service-details-4.jpg" alt="img not found" />
-                    </div>
-                  </div>
-                  <div className="col-xl-6">
-                    <p className="mb-20">Posuere ad tristique fusce nam quisque in pretium morbi risus orci volutpat non in the quam cum praesent auctor tellus penatibus orci litora donec posuere etiam commo doing to fermentum ultricies habitant scelerisque. Ipsum torquent venenatis congue biben dum mauris primis con vallis dictum phasellus laoreet magnis felis iaculis vele parturient interdum conubia adse be accumsan pharetra enim dictumst. Tincidunt massa amet magna facilisi quis convallis congue. Fringilla aliquet dolor to gravida class libero cubilia pulvinar etiam platea</p>
-                    <p>Habitasse sed orci lorem lorem quis conubia nam amet lobortis hymenaeos tellus ad nunc senectus auctor varius lamcorper neque faucibus nam ridiculus posuere. Sollici tudin nullam sociis molestie vestibulum to commodo dui tellus eget quam, natoque et. Nonummy bes vehicula leo sollicitudin cras Sociis pretium ligula donec sagittis inter dum aptent nam penatibus dolormagna eu pharetra.</p>
-                  </div>
-                </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>

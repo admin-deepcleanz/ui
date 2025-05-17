@@ -32,7 +32,7 @@ const PricingArea = () => {
 
                               <HomeSinglePrice icon_name="cleaning-1" title="2 BHK Unfurnished House" count="2" price="3799" />
 
-                              <HomeSinglePrice icon_name="vacuum-cleaner-1" title="3 BHK Unfurnished House" count="3" price="4999" />
+                              <HomeSinglePrice icon_name="vacuum-cleaner-1" title="3 BHK Unfurnished House" count="3" price="4499" />
 
                            </div>
                         </div>

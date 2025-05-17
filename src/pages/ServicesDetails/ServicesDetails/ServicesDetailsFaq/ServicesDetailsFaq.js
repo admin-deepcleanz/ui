@@ -26,6 +26,7 @@ const categories = [
     id: 'kitchen',
     title: 'Kitchen Cleaning',
     image: 'assets/img/service/kitchen.jpg',
+    amount: '₹1299 – ₹1799',
     doList: [
       'Wiping countertops and tile backsplash',
       'Cleaning stove tops and chimney exterior',
@@ -43,6 +44,7 @@ const categories = [
     id: 'bathroom',
     title: 'Bathroom Cleaning',
     image: 'assets/img/service/bathroom.png',
+    amount: '₹599 – ₹899',
     doList: [
       'Cleaning WC, wash basins, and tiles',
       'Disinfecting taps, showers, and faucets',
@@ -59,6 +61,7 @@ const categories = [
     id: 'bedroom',
     title: 'Bedroom Cleaning',
     image: 'assets/img/service/bedroom.jpg',
+    amount: '₹1299 – ₹1499',
     doList: [
       'Dusting and wiping surfaces, furniture, and decor',
       'Window glass and sill cleaning (interior)',
@@ -75,25 +78,29 @@ const categories = [
     id: 'sofa',
     title: 'Sofa Cleaning',
     image: 'assets/img/service/sofa.jpg',
+    amount: '₹250 per Seat',
     doList: [
-      'Vacuuming dust and debris from sofa surface and gaps',
-      'Shampooing and foam treatment (fabric only)',
-      'Mild spot stain treatment',
+      'Dry vacuuming',
+      'Shampooing (fabric only)',
+      'Hand scrub cleaning'
     ],
     dontList: [
       'Repairing sofa structure or springs',
       'Deep leather treatment (unless pre-approved)',
       'Guarantee of 100% stain removal',
+      'Machine cleaning (as it may pose a risk of damaging the fabric)'
     ],
   },
   {
     id: 'mattress',
     title: 'Mattress Cleaning',
     image: 'assets/img/service/mattress.jpg',
+    amount: '₹799 - ₹999',
     doList: [
-      'Dry vacuuming to remove dust mites',
-      'Steam sanitization for hygiene',
-      'Odor and allergen reduction',
+      'Dry vacuuming',
+      'Shampooing (fabric only)',
+      'Hand scrub cleaning',
+      'Machine cleaning (as it may pose a risk of damaging the fabric)'
     ],
     dontList: [
       'Washing or soaking the mattress',
@@ -123,14 +130,14 @@ const categories = [
 const ServicesDetailsFaq = () => {
   const [isOpen, setOpen] = useState(false);
 
-const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  const offset = 80; // adjust based on your header height
-  if (section) {
-    const y = section.getBoundingClientRect().top + window.pageYOffset - offset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-};
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    const offset = 80; // adjust based on your header height
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     if (window.location.hash) {
@@ -192,7 +199,10 @@ const scrollToSection = (id) => {
                         </div>
                         <div className="col-md-7">
                           <div className="card-body px-4 py-3">
-                            <h3 className="text-dark fw-semibold mb-3">{cat.title}</h3>
+                            <h3 className="text-dark fw-semibold mb-2">{cat.title}</h3>
+                            {cat.amount && (
+                            <p className="text-muted mb-3"><strong>Price Range:</strong> {cat.amount}</p>
+                            )}
                             <div className="mb-2">
                               <strong className="text-success">What’s Included ✅</strong>
                               <ul className="text-muted ps-3 mt-2" style={{ listStyleType: 'disc' }}>
@@ -215,6 +225,7 @@ const scrollToSection = (id) => {
                     </div>
                   </div>
                 ))}
+
 
                 <h3 className="tp-service-details-subtitle mb-20">Why Choose Us</h3>
                 <p className="mb-35">Trained staff, reliable service, transparent pricing, eco-friendly cleaning agents, and 100% satisfaction guarantee. We’re here to make your space shine – every time!</p>

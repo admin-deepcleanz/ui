@@ -27,8 +27,8 @@ const HomeHeroSingleSlide = ({ setOpen }) => {
                                     </Fade>
 
                                     <h1 className="tp-slider-title mb-45">
-                                        <Fade right>Cleaning</Fade>
-                                        <Fade top>Excellence</Fade>
+                                        <Fade right>Chennai's</Fade>
+                                        <Fade top>Trusted Cleaning</Fade>
                                         <Fade top>Guaranteed!</Fade>
                                     </h1>
 

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { BsChevronRight,BsChevronLeft } from 'react-icons/bs';
+import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 // import Swiper core and required modules
 import SwiperCore, { Navigation } from 'swiper';
 import AboutSingleTestimonial from '../../../../components/AboutSingleTestimonial/AboutSingleTestimonial';
@@ -54,24 +54,21 @@ const AboutTestimonial = () => {
                                     },
                                  }}
                                  navigation={{ nextEl: '.testimonial-button-next', prevEl: '.testimonial-button-prev', }}
-                                 // onSlideChange={() => console.log('slide change')}
-                                 // onSwiper={(swiper) => console.log(swiper)}
+                              // onSlideChange={() => console.log('slide change')}
+                              // onSwiper={(swiper) => console.log(swiper)}
                               >
                                  <SwiperSlide>
-                                    <AboutSingleTestimonial name="Madhan R" review="Super smooth process! I just sent a video, got a fair quote, and the cleaning team arrived right on time. Highly professional!" />
+                                    <AboutSingleTestimonial testi_img_num="review-1" />
                                  </SwiperSlide>
 
                                  <SwiperSlide>
-                                    <AboutSingleTestimonial name="Rajeswari" review="They don’t overpromise – just honest service and great results. My home feels brand new after their deep clean." />
+                                    <AboutSingleTestimonial testi_img_num="review-2" />
                                  </SwiperSlide>
 
                                  <SwiperSlide>
-                                    <AboutSingleTestimonial name="Alex" review="Love how easy it was. No phone calls, no confusion. Just sent a WhatsApp video and everything else was handled perfectly." />
+                                    <AboutSingleTestimonial testi_img_num="review-3" />
                                  </SwiperSlide>
 
-                                 <SwiperSlide>
-                                    <AboutSingleTestimonial name="Ram" review="The flexible pricing based on my home’s condition really stood out. Worth every rupee. Will book again!" />
-                                 </SwiperSlide>
 
                                  <div ref={prevRef}>Prev</div>
                                  <div ref={nextRef}>Next</div>
@@ -85,10 +82,10 @@ const AboutTestimonial = () => {
 
                   <div className="tp-testimonial-slider-arrow">
                      <div className="testimonial-button-next slide-next">
-                        <i><BsChevronRight/></i>
+                        <i><BsChevronRight /></i>
                      </div>
                      <div className="testimonial-button-prev slide-prev">
-                        <i><BsChevronLeft/></i>
+                        <i><BsChevronLeft /></i>
                      </div>
                   </div>
                </div>

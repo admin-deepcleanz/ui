@@ -19,8 +19,8 @@ const HomeThreeHeroSlide = () => {
                                 </Fade>
 
                                 <Fade right>
-                                    <h1 className="tp-slider-three-title">Cleaning
-                                        <br />Excellence <br />Guaranteed!</h1>
+                                    <h1 className="tp-slider-three-title">Chennai’s
+                                        <br />Trusted Cleaning <br />Guaranteed!</h1>
                                 </Fade>
 
                                 <Fade bottom>

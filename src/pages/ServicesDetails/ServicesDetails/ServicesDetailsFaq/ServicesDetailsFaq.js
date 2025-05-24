@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ModalVideo from 'react-modal-video';
 import 'react-modal-video/scss/modal-video.scss';
-import { FaArrowRight, FaPlay } from 'react-icons/fa';
+import { FaArrowRight} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const categories = [

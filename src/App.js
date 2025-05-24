@@ -18,6 +18,7 @@ import Contact from './pages/Contact/Contact/Contact';
 import { WOW } from 'wowjs';
 import ScrollToTop from './components/ScrollToTop';
 import ContactButtons from './components/ContactButtons/ContactButtons';
+import NotFound from './pages/NotFound/NotFound';
 // import HomeTwo from './pages/HomeTwo/HomeTwo/HomeTwo';
 // import HomeThree from './pages/HomeThree/HomeThree/HomeThree';
 
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/blogSidebar" element={<BlogsSidebar />} />
           <Route path="/blogDetails" element={<BlogDetails />} /> */}
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
       <ContactButtons />

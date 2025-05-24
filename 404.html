@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <script type="text/javascript">
-      // GitHub Pages redirect workaround for React Router
-      const redirect = '/' + location.pathname.replace(/^\/+/g, '') + location.search + location.hash;
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      const redirect = '/' + location.pathname.replace(/^\/+/, '') + location.search + location.hash;
       sessionStorage.redirect = redirect;
       window.location.href = '/';
     </script>

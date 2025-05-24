@@ -28,7 +28,12 @@
   <link rel="stylesheet" href="assets/css/flaticon.css">
   <link rel="stylesheet" href="assets/css/default.css">
   <!-- <link rel="stylesheet" href="assets/css/main.css"> -->
-  <!-- Google tag (gtag.js) -->
+  <!-- ✅ Redirect from www to non-www -->
+  <script>
+    if (location.hostname === "www.deepcleanz.com") {
+      location.replace("https://deepcleanz.com" + location.pathname + location.search + location.hash);
+    }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17060082093"></script>
   <script>
@@ -45,7 +50,8 @@
   <title>Deepcleanz | Professional Cleaning Services</title>
   <meta name="description"
     content="Deepcleanz offers expert residential and commercial cleaning services to make your space shine every time." />
-  <meta name="keywords" content="cleaning services, deep cleaning, home cleaning, office cleaning, Deepcleanz, professional cleaning services" />
+  <meta name="keywords"
+    content="cleaning services, deep cleaning, home cleaning, office cleaning, Deepcleanz, professional cleaning services" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->

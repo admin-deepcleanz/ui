@@ -21,7 +21,7 @@ const PricingAffordablePackage = () => {
 
                   <AboutSinglePrice icon_name="cleaning-1" title="2 BHK Unfurnished House" count="2" price="3799" />
 
-                  <AboutSinglePrice icon_name="vacuum-cleaner-1" title="3 BHK Unfurnished House" count="3" price="4499" />
+                  <AboutSinglePrice icon_name="vacuum-cleaner-1" title="3 BHK Unfurnished House" count="3" price="4799" />
 
                </div>
             </div>

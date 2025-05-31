@@ -92,11 +92,11 @@ const Home = () => {
          <Navigation />
          <HeroSection />
          <CtaArea />
+         <PricingArea />
+         <FactArea />
          <ServiceArea />
          <ChoseArea />
-         <FactArea />
          {/* <BannerArea /> */}
-         <PricingArea />
          <AboutArea />
          <Testimonial />
          {/* <Projects /> */}

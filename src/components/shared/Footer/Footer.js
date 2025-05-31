@@ -10,7 +10,7 @@ const Footer = () => {
    return (
       <>
          <footer className="theme-dark-bg">
-            <div className="tp-footer-subscribe-area-two position-relative pt-100">
+            {/* <div className="tp-footer-subscribe-area-two position-relative pt-100">
                <div className="container">
                   <div className="tp-footer-subscribe-bg-two theme-yellow-bg pt-30 pb-20 z-index pl-60 pr-60">
                      <div className="row align-items-center">
@@ -35,7 +35,7 @@ const Footer = () => {
                      </div>
                   </div>
                </div>
-            </div>
+            </div> */}
             <div className="tp-footer-area-two pt-80 pb-50">
                <div className="container">
                   <div className="row justify-content-around">

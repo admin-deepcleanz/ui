@@ -26,7 +26,7 @@ const categories = [
     id: 'kitchen',
     title: 'Kitchen Cleaning',
     image: 'assets/img/service/kitchen.jpg',
-    amount: '₹1299 – ₹1799',
+    amount: '₹1299',
     doList: [
       'Wiping countertops and tile backsplash',
       'Cleaning stove tops and chimney exterior',
@@ -44,7 +44,7 @@ const categories = [
     id: 'bathroom',
     title: 'Bathroom Cleaning',
     image: 'assets/img/service/bathroom.png',
-    amount: '₹599 – ₹899',
+    amount: '₹599',
     doList: [
       'Cleaning WC, wash basins, and tiles',
       'Disinfecting taps, showers, and faucets',
@@ -61,7 +61,7 @@ const categories = [
     id: 'bedroom',
     title: 'Bedroom Cleaning',
     image: 'assets/img/service/bedroom.jpg',
-    amount: '₹1299 – ₹1499',
+    amount: '₹1299',
     doList: [
       'Dusting and wiping surfaces, furniture, and decor',
       'Window glass and sill cleaning (interior)',
@@ -95,7 +95,7 @@ const categories = [
     id: 'mattress',
     title: 'Mattress Cleaning',
     image: 'assets/img/service/mattress.jpg',
-    amount: '₹799 - ₹999',
+    amount: '₹799',
     doList: [
       'Dry vacuuming',
       'Shampooing (fabric only)',
@@ -201,7 +201,7 @@ const ServicesDetailsFaq = () => {
                           <div className="card-body px-4 py-3">
                             <h3 className="text-dark fw-semibold mb-2">{cat.title}</h3>
                             {cat.amount && (
-                            <p className="text-muted mb-3"><strong>Price Range:</strong> {cat.amount}</p>
+                            <p className="text-muted mb-3"><strong>Starts At:</strong> {cat.amount}</p>
                             )}
                             <div className="mb-2">
                               <strong className="text-success">What’s Included ✅</strong>

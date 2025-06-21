@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
 
 const ApointArea = () => {
     const form = useRef();
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
+        location: '',
         service: '',
         message: ''
     });
@@ -20,10 +20,10 @@ const ApointArea = () => {
         return /^[6-9]\d{9}$/.test(phone);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!formData.name || !formData.phone || !formData.service) {
+        if (!formData.name || !formData.phone || !formData.service || !formData.location) {
             setError('Please fill in all required fields.');
             return;
         }
@@ -33,17 +33,15 @@ const ApointArea = () => {
             return;
         }
 
-        emailjs.sendForm(
-            'service_rhxf3t4', // 🔁 Replace with your actual EmailJS service ID
-            'template_n15hlwv', // 🔁 Replace with your actual EmailJS template ID
-            form.current,
-            'hiMSFqxH2h7sxvcAl' // 🔁 Replace with your EmaiJS public key
-        )
-            .then(() => {
-                setSuccess('Your appointment request has been sent!');
-                setError('');
-                setFormData({ name: '', phone: '', service: '', message: '' });
-            })
+        await fetch('https://hook.eu2.make.com/fbwndbexchu5i2win4z6gpnj1tvw33ob', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        }).then(() => {
+            setSuccess('Your appointment request has been sent!');
+            setError('');
+            setFormData({ name: '', phone: '', service: '', message: '', location: '' });
+        })
             .catch(() => {
                 setError('Failed to send. Please try again.');
                 setSuccess('');
@@ -78,6 +76,9 @@ const ApointArea = () => {
                                         <option value="Sofa Cleaning">Sofa Cleaning</option>
                                         <option value="Carpet Cleaning">Carpet Cleaning</option>
                                     </select>
+                                </div>
+                                <div className="input-field mb-15">
+                                    <input type="text" placeholder="Location" name="location" value={formData.location} onChange={handleChange} />
                                 </div>
                                 <div className="input-field mb-15">
                                     <textarea placeholder="Write Message" name="message" value={formData.message} onChange={handleChange}></textarea>

@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import 'swiper/css/pagination';
-import emailjs from 'emailjs-com';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -33,10 +32,14 @@ const ServicesTestimonials = () => {
       setFormData({ ...formData, [name]: value });
    };
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
       if (!validate()) return;
-      emailjs.send('service_rhxf3t4', 'template_n15hlwv', formData, 'hiMSFqxH2h7sxvcAl')
+      await fetch('https://hook.eu2.make.com/fbwndbexchu5i2win4z6gpnj1tvw33ob', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(formData)
+      })
          .then(() => {
             alert('Your estimate request has been sent!');
             setFormData({ name: '', phone: '', service: '', message: '' });

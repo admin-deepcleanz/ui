@@ -61,12 +61,12 @@ const Footer = () => {
                         <div className="tp-footer-widget footer-col-2 mb-30 wow fadeInUp" data-wow-delay=".6s">
                            <h4 className="tp-footer-widget-title mb-35">Our Services</h4>
                            <ul>
-                              <li><a href="#">Full house Cleaning</a></li>
-                              <li><a href="#">Kitchen Serivices</a></li>
-                              <li><a href="#">Bedroom Cleaning</a></li>
-                              <li><a href="#">Bathroom Services</a></li>
-                              <li><a href="#">Sofa Cleaning</a></li>
-                              <li><a href="#">Carpet Cleaning</a></li>
+                              <li><a href="/servicesDetails">Full house Cleaning</a></li>
+                              <li><a href="/servicesDetails">Kitchen Serivices</a></li>
+                              <li><a href="/servicesDetails">Bedroom Cleaning</a></li>
+                              <li><a href="/servicesDetails">Bathroom Services</a></li>
+                              <li><a href="/servicesDetails">Sofa Cleaning</a></li>
+                              <li><a href="/servicesDetails">Carpet Cleaning</a></li>
                            </ul>
                         </div>
                      </div>

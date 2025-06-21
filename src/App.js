@@ -19,6 +19,7 @@ import { WOW } from 'wowjs';
 import ScrollToTop from './components/ScrollToTop';
 import ContactButtons from './components/ContactButtons/ContactButtons';
 import NotFound from './pages/NotFound/NotFound';
+import VisitTracker from './components/visitTracker';
 // import HomeTwo from './pages/HomeTwo/HomeTwo/HomeTwo';
 // import HomeThree from './pages/HomeThree/HomeThree/HomeThree';
 
@@ -54,6 +55,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
       <ContactButtons />
+      <VisitTracker />
     </>
   );
 };

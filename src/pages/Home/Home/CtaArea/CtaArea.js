@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 
 const CtaArea = () => {
    const [formData, setFormData] = useState({
@@ -24,20 +23,15 @@ const CtaArea = () => {
       return Object.keys(newErrors).length === 0;
    };
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
       if (!validateForm()) return;
 
-      emailjs.send(
-         'service_rhxf3t4', // 🔁 Replace with your actual EmailJS service ID
-         'template_n15hlwv', // 🔁 Replace with your actual EmailJS template ID
-         {
-            name: formData.name,
-            phone: formData.phone,
-            service: formData.service,
-         },
-         'hiMSFqxH2h7sxvcAl' // 🔁 Replace with your EmaiJS public key
-      ).then(
+      await fetch('https://hook.eu2.make.com/fbwndbexchu5i2win4z6gpnj1tvw33ob', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(formData)
+      }).then(
          (response) => {
             alert('Mail sent successfully!');
             setFormData({ name: '', phone: '', service: '' });

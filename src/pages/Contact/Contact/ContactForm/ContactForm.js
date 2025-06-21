@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelopeOpen } from 'react-icons/fa';
 
 const ContactForm = () => {
@@ -22,7 +21,7 @@ const ContactForm = () => {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const { name, email, phone, service } = formData;
@@ -42,12 +41,11 @@ const ContactForm = () => {
             return;
         }
 
-        emailjs.sendForm(
-            'service_rhxf3t4', // 🔁 Replace with your actual EmailJS service ID
-            'template_n15hlwv', // 🔁 Replace with your actual EmailJS template ID
-            form.current,
-            'hiMSFqxH2h7sxvcAl' // 🔁 Replace with your EmaiJS public key
-        ).then(
+        await fetch('https://hook.eu2.make.com/fbwndbexchu5i2win4z6gpnj1tvw33ob', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        }).then(
             () => {
                 setSuccess('Message sent successfully!');
                 setError('');

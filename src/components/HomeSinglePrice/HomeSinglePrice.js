@@ -29,7 +29,7 @@ const HomeSinglePrice = ({ icon_name, title, price, points = [] }) => {
             </ul>
          )}
 
-         <Link to="/pricing" className="btn btn-primary">
+         <Link to="/appointment" className="btn btn-primary">
             <i className="flaticon-enter me-2"></i> Get Service
          </Link>
       </div>

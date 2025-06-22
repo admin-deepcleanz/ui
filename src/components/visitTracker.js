@@ -8,12 +8,13 @@ export default function VisitTracker() {
   const [totalCount, setTotalCount] = useState(null);
   const [open, setOpen] = useState(false);
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const isAdmin = urlParams.get('admin') === 'true';
+
   useEffect(() => {
     const trackVisit = async () => {
       const now = new Date();
       const todayDate = now.toISOString().substring(0, 10);
-      const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-      const startOfMonthTimestamp = Timestamp.fromDate(firstDayOfMonth);
 
       await addDoc(collection(db, "visitLogs"), {
         timestamp: now,
@@ -21,32 +22,37 @@ export default function VisitTracker() {
         userAgent: navigator.userAgent
       });
 
-      const totalSnapshot = await getDocs(collection(db, "visitLogs"));
-      setTotalCount(totalSnapshot.size);
+      if (isAdmin) {
+        const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+        const startOfMonthTimestamp = Timestamp.fromDate(firstDayOfMonth);
 
-      const todayQuery = query(collection(db, "visitLogs"), where("date", "==", todayDate));
-      const todaySnapshot = await getDocs(todayQuery);
-      setTodayCount(todaySnapshot.size);
+        const totalSnapshot = await getDocs(collection(db, "visitLogs"));
+        setTotalCount(totalSnapshot.size);
 
-      const monthQuery = query(
-        collection(db, "visitLogs"),
-        where("timestamp", ">=", startOfMonthTimestamp)
-      );
-      const monthSnapshot = await getDocs(monthQuery);
-      setMonthCount(monthSnapshot.size);
+        const todayQuery = query(collection(db, "visitLogs"), where("date", "==", todayDate));
+        const todaySnapshot = await getDocs(todayQuery);
+        setTodayCount(todaySnapshot.size);
+
+        const monthQuery = query(
+          collection(db, "visitLogs"),
+          where("timestamp", ">=", startOfMonthTimestamp)
+        );
+        const monthSnapshot = await getDocs(monthQuery);
+        setMonthCount(monthSnapshot.size);
+      }
     };
 
     trackVisit();
-  }, []);
+  }, [isAdmin]);
+
+  if (!isAdmin) return null;
 
   return (
     <>
-      {/* Floating button */}
-      <div style={buttonStyle} onClick={() => setOpen(!open)}>
-        📈
+      <div style={floatingButton} onClick={() => setOpen(!open)}>
+        {open ? '🔽' : '📈'}
       </div>
 
-      {/* Expandable panel */}
       <div style={{
         ...panelStyle,
         transform: open ? 'translateY(0)' : 'translateY(20px)',
@@ -63,17 +69,36 @@ export default function VisitTracker() {
 }
 
 function Stat({ label, count }) {
+  const [displayCount, setDisplayCount] = useState(0);
+
+  useEffect(() => {
+    if (count === null) return;
+    let start = 0;
+    const duration = 500;  // ms
+    const increment = count / (duration / 20);
+    const interval = setInterval(() => {
+      start += increment;
+      if (start >= count) {
+        clearInterval(interval);
+        setDisplayCount(count);
+      } else {
+        setDisplayCount(Math.floor(start));
+      }
+    }, 20);
+    return () => clearInterval(interval);
+  }, [count]);
+
   return (
     <div style={statRow}>
       <span style={statLabel}>{label}:</span>
-      <span style={statValue}>{count ?? '...'}</span>
+      <span style={statValue}>{displayCount ?? '...'}</span>
     </div>
   );
 }
 
-// Styling
+// Styles
 
-const buttonStyle = {
+const floatingButton = {
   position: 'fixed',
   bottom: '20px',
   left: '20px',
@@ -89,7 +114,7 @@ const buttonStyle = {
   boxShadow: '0 6px 15px rgba(0,0,0,0.4)',
   cursor: 'pointer',
   zIndex: 1000,
-  transition: 'all 0.25s ease'
+  transition: 'all 0.3s ease'
 };
 
 const panelStyle = {
@@ -97,20 +122,20 @@ const panelStyle = {
   bottom: '90px',
   left: '20px',
   backgroundColor: '#fff',
-  padding: '18px 22px',
-  borderRadius: '14px',
+  padding: '20px',
+  borderRadius: '16px',
   boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
   fontFamily: '"Segoe UI", Roboto, sans-serif',
-  fontSize: '14px',
-  width: '230px',
+  fontSize: '15px',
+  width: '240px',
   zIndex: 1000,
   transition: 'all 0.3s ease',
   border: '1px solid #ddd'
 };
 
 const headerStyle = {
-  marginBottom: '14px',
-  fontSize: '16px',
+  marginBottom: '15px',
+  fontSize: '17px',
   fontWeight: '600',
   color: '#0083b0',
   textAlign: 'center'
@@ -119,14 +144,14 @@ const headerStyle = {
 const statRow = {
   display: 'flex',
   justifyContent: 'space-between',
-  marginBottom: '10px'
+  marginBottom: '12px'
 };
 
 const statLabel = {
-  color: '#555'
+  color: '#333'
 };
 
 const statValue = {
   fontWeight: 'bold',
-  color: '#222'
+  color: '#000'
 };

@@ -4,7 +4,8 @@ const CtaArea = () => {
    const [formData, setFormData] = useState({
       name: '',
       phone: '',
-      service: ''
+      service: '',
+      location: ''
    });
 
    const [errors, setErrors] = useState({});
@@ -19,6 +20,7 @@ const CtaArea = () => {
       if (!formData.name) newErrors.name = 'Name is required';
       if (!formData.phone) newErrors.phone = 'Phone number is required';
       if (!formData.service) newErrors.service = 'Please select a service';
+      if (!formData.location) newErrors.location = 'Location is required';
       setErrors(newErrors);
       return Object.keys(newErrors).length === 0;
    };
@@ -34,7 +36,7 @@ const CtaArea = () => {
       }).then(
          (response) => {
             alert('Mail sent successfully!');
-            setFormData({ name: '', phone: '', service: '' });
+            setFormData({ name: '', phone: '', service: '', location: '' });
          },
          (error) => {
             alert('Failed to send mail. Try again.');
@@ -52,21 +54,21 @@ const CtaArea = () => {
                         <h4 className="tp-appoint-title">Online <br /> Appointment</h4>
                      </div>
                   </div>
-                  <div className="col-xl-8 col-lg-9 custom-pad-20">
+                  <div className="col-xl-9 col-lg-9 custom-pad-20">
                      <div className="row align-items-center custom-mar-20">
-                        <div className="col-lg-4 custom-pad-20">
+                        <div className="col-lg-3 custom-pad-20">
                            <div className="tp-appoint wow fadeInUp" data-wow-delay=".3s">
                               <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} />
                               {errors.name && <p className="text-danger">{errors.name}</p>}
                            </div>
                         </div>
-                        <div className="col-lg-4 custom-pad-20">
+                        <div className="col-lg-3 custom-pad-20">
                            <div className="tp-appoint wow fadeInUp" data-wow-delay=".5s">
                               <input type="text" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} />
                               {errors.phone && <p className="text-danger">{errors.phone}</p>}
                            </div>
                         </div>
-                        <div className="col-lg-4 custom-pad-20">
+                        <div className="col-lg-3 custom-pad-20">
                            <div className="tp-appoint select-field-arrow wow fadeInUp" data-wow-delay=".7s">
                               <select name="service" value={formData.service} onChange={handleChange}>
                                  <option value="">Service Name</option>
@@ -80,9 +82,15 @@ const CtaArea = () => {
                               {errors.service && <p className="text-danger">{errors.service}</p>}
                            </div>
                         </div>
+                        <div className="col-lg-3 custom-pad-20">
+                           <div className="tp-appoint wow fadeInUp" data-wow-delay=".5s">
+                              <input type="text" name="location" placeholder="Location" value={formData.location} onChange={handleChange} />
+                              {errors.location && <p className="text-danger">{errors.location}</p>}
+                           </div>
+                        </div>
                      </div>
                   </div>
-                  <div className="col-xl-2 col-lg-3 custom-pad-20">
+                  <div className="col-xl-1 col-lg-3 custom-pad-20">
                      <div className="tp-appoint text-end wow fadeInUp" data-wow-delay=".9s">
                         <button type="submit" className="theme-btn text-white">
                            <i className="flaticon-enter"></i> Submit Now

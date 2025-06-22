@@ -24,9 +24,9 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { name, email, phone, service } = formData;
+        const { name, email, phone, service, location } = formData;
 
-        if (!name || !email || !phone || !service) {
+        if (!name || !email || !phone || !service || !location) {
             setError('Please fill all required fields.');
             return;
         }
@@ -49,7 +49,7 @@ const ContactForm = () => {
             () => {
                 setSuccess('Message sent successfully!');
                 setError('');
-                setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+                setFormData({ name: '', email: '', phone: '', service: '', message: '', location: '' });
             },
             () => {
                 setError('Something went wrong. Please try again.');
@@ -141,6 +141,11 @@ const ContactForm = () => {
                                                 <option value="Sofa Cleaning">Sofa Cleaning</option>
                                                 <option value="Carpet Cleaning">Carpet Cleaning</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-12 custom-pad-20">
+                                        <div className="tp-contact-form-field mb-20">
+                                            <input type="text" name="location" placeholder="location" value={formData.location} onChange={handleChange} />
                                         </div>
                                     </div>
                                     <div className="col-md-12 custom-pad-20">

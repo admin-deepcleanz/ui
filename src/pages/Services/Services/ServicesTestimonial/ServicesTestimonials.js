@@ -12,6 +12,7 @@ const ServicesTestimonials = () => {
       name: '',
       phone: '',
       service: '',
+      location: '',
       message: ''
    });
 
@@ -22,6 +23,7 @@ const ServicesTestimonials = () => {
       if (!formData.name.trim()) newErrors.name = 'Name is required';
       if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Valid 10-digit phone required';
       if (!formData.service) newErrors.service = 'Service is required';
+      if (!formData.location) newErrors.location = 'Location is required';
       if (!formData.message.trim()) newErrors.message = 'Message is required';
       setErrors(newErrors);
       return Object.keys(newErrors).length === 0;
@@ -42,7 +44,7 @@ const ServicesTestimonials = () => {
       })
          .then(() => {
             alert('Your estimate request has been sent!');
-            setFormData({ name: '', phone: '', service: '', message: '' });
+            setFormData({ name: '', phone: '', service: '', message: '', location: '' });
          })
          .catch(() => {
             alert('Something went wrong. Please try again.');
@@ -116,6 +118,10 @@ const ServicesTestimonials = () => {
                            <option value="Carpet Cleaning">Carpet Cleaning</option>
                         </select>
                         {errors.service && <small style={{ color: 'red' }}>{errors.service}</small>}
+                     </div>
+                     <div className="input-field mb-15">
+                        <input type="text" name="location" value={formData.location} onChange={handleChange} placeholder="Location" />
+                        {errors.location && <small style={{ color: 'red' }}>{errors.location}</small>}
                      </div>
                      <div className="input-field mb-15">
                         <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Write Message"></textarea>

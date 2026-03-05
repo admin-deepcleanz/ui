@@ -33,20 +33,6 @@
     if (location.hostname === "www.deepcleanz.com") {
       location.replace("https://deepcleanz.com" + location.pathname + location.search + location.hash);
     }
-  </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G0JBWCSD8R"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-G0JBWCSD8R');
-  </script>
-  <!-- Event snippet for Book appointment conversion page -->
-  <script>
-    gtag('event', 'conversion', { 'send_to': 'G-G0JBWCSD8R/ckNiCOTTscYaEK3j8MY_' });
-  </script>
   <title>Deepcleanz | Professional Cleaning Services</title>
   <meta name="description"
     content="Deepcleanz offers expert residential and commercial cleaning services to make your space shine every time." />
@@ -60,6 +46,32 @@
   <meta property="og:image" content="https://deepcleanz.com/assets/img/logo/logo-blue.png" />
   <meta property="og:url" content="https://deepcleanz.com" />
   <meta name="twitter:card" content="summary_large_image" />
+      <!-- Event snippet for Contact (1) conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17352230243/5CV-CInNr4McEOOKmNJA',
+      'value': 1.0,
+      'currency': 'INR'
+  });
+</script>
+  <!-- Event snippet for Click to call conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17352230243/NoCZCIzNr4McEOOKmNJA',
+      'value': 1.0,
+      'currency': 'INR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 </head>
 
 <body>

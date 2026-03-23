@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import Sidebar from '../../Sidebar/Sidebar';
@@ -11,15 +11,19 @@ const Navigation = () => {
    const handleShow = () => setShow(true);
    // sticky state
    const [sticky, setSticky] = useState(false);
-   const stickyNavbar = () => {
-      if (window.scrollY > 80) {
-         setSticky(true)
-      }
-      else {
-         setSticky(false)
-      }
-   }
-   window.addEventListener('scroll', stickyNavbar);
+
+   useEffect(() => {
+      const stickyNavbar = () => {
+         if (window.scrollY > 80) {
+            setSticky(true);
+         } else {
+            setSticky(false);
+         }
+      };
+
+      window.addEventListener('scroll', stickyNavbar);
+      return () => window.removeEventListener('scroll', stickyNavbar);
+   }, []);
    return (
       <>
          <header>

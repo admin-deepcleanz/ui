@@ -5,7 +5,6 @@ import 'react-modal-video/scss/modal-video.scss';
 import "swiper/css";
 import "swiper/css/pagination"
 import SwiperCore, { Pagination, Autoplay, A11y, EffectFade, EffectCards } from 'swiper';
-import { Carousel } from 'react-bootstrap';
 import HomeHeroSingleSlide from '../../../../components/HomeHeroSingleSlide/HomeHeroSingleSlide';
 
 // install Swiper modules

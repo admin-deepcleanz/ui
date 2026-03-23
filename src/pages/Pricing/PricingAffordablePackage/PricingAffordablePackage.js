@@ -69,7 +69,7 @@ const PricingAffordablePackage = () => {
                            "Bathroom Machine Deep Cleaning",
                            "Toilet Bowl Cleaning",
                            "Sink and Mirror Cleaning",
-                           "Floor Moping"
+                           "Floor Mopping"
                         ]}
                      />
                      <AboutSinglePrice
@@ -80,7 +80,7 @@ const PricingAffordablePackage = () => {
                            "Kitchen Full Deep Cleaning",
                            "Sink and Countertop Cleaning",
                            "Exhaust Fan Cleaning",
-                           "Floor Moping"
+                           "Floor Mopping"
                         ]}
                      />
                      <AboutSinglePrice
@@ -92,7 +92,7 @@ const PricingAffordablePackage = () => {
                            "Dry Vacuuming",
                            "Dusting of Furniture",
                            "Window and Curtain Cleaning",
-                           "Floor Moping"
+                           "Floor Mopping"
                         ]}
                      />
                      <AboutSinglePrice
@@ -103,7 +103,7 @@ const PricingAffordablePackage = () => {
                            "1 Bedroom Cleaning",
                            "1 Bathroom Machine Deep Cleaning",
                            "Kitchen Full Deep Cleaning",
-                           "Floor Moping"
+                           "Floor Mopping"
                         ]}
                      />
                      <AboutSinglePrice
@@ -114,7 +114,7 @@ const PricingAffordablePackage = () => {
                            "2 Bedroom Cleaning",
                            "2 Bathroom Machine Deep Cleaning",
                            "Kitchen Full Deep Cleaning",
-                           "Floor Moping"
+                           "Floor Mopping"
                         ]}
                      />
                      <AboutSinglePrice
@@ -125,7 +125,7 @@ const PricingAffordablePackage = () => {
                            "3 Bedroom Cleaning",
                            "3 Bathroom Machine Deep Cleaning",
                            "Kitchen Full Deep Cleaning",
-                           "Floor Moping"
+                           "Floor Mopping"
                         ]}
                      />
                   </div>

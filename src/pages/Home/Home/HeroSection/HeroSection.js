@@ -24,21 +24,22 @@ const HeroSection = () => {
          <section className="tp-slider-area fix">
             <div className="tp-slider-active home_hero_slide swiper-container common-dots">
 
+               <HomeHeroSingleSlide setOpen={setOpen} />
 
-               <Carousel interval={3000} fade={true} indicators={true}>
+               {/* <Carousel interval={3000} fade={true} indicators={true}>
                   <Carousel.Item>
-                     <HomeHeroSingleSlide setOpen={setOpen}/>
+                     <HomeHeroSingleSlide setOpen={setOpen} />
                   </Carousel.Item>
 
                   <Carousel.Item>
-                     <HomeHeroSingleSlide setOpen={setOpen}/>
+                     <HomeHeroSingleSlide setOpen={setOpen} />
                   </Carousel.Item>
 
                   <Carousel.Item>
-                     <HomeHeroSingleSlide setOpen={setOpen}/>
+                     <HomeHeroSingleSlide setOpen={setOpen} />
                   </Carousel.Item>
 
-               </Carousel>
+               </Carousel> */}
 
                <div className="swiper-paginations slide-dots"></div>
             </div>

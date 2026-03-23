@@ -27,15 +27,16 @@ const HomeHeroSingleSlide = ({ setOpen }) => {
                                     </Fade>
 
                                     <h1 className="tp-slider-title mb-45">
-                                        <Fade right>Chennai's</Fade>
-                                        <Fade top>Trusted Cleaning</Fade>
-                                        <Fade top>Guaranteed!</Fade>
+                                        <Fade right>Professional</Fade>
+                                        <Fade top>Deep Cleaning in</Fade>
+                                        <Fade top>Chennai</Fade>
+                                        <Fade top>20% Off your First Booking</Fade>
                                     </h1>
 
                                     <div className="tp-slider-btn">
                                         <Fade bottom>
-                                            <Link to="/about" className="theme-btn text-white">
-                                                <i className="flaticon-enter"></i> Learn More</Link>
+                                            <Link to="/appointment" className="theme-btn text-white">
+                                                <i className="flaticon-enter"></i> Book Now</Link>
                                         </Fade>
                                     </div>
 

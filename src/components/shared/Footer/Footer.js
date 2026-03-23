@@ -62,7 +62,7 @@ const Footer = () => {
                            <h4 className="tp-footer-widget-title mb-35">Our Services</h4>
                            <ul>
                               <li><a href="/servicesDetails">Full house Cleaning</a></li>
-                              <li><a href="/servicesDetails">Kitchen Serivices</a></li>
+                              <li><a href="/servicesDetails">Kitchen Services</a></li>
                               <li><a href="/servicesDetails">Bedroom Cleaning</a></li>
                               <li><a href="/servicesDetails">Bathroom Services</a></li>
                               <li><a href="/servicesDetails">Sofa Cleaning</a></li>
@@ -118,7 +118,7 @@ const Footer = () => {
                   <div className="row">
                      <div className="col-12">
                         <div className="tp-copyright tp-copyright-two text-center">
-                           <p className="m-0">Copyright ©2025 <span>DeepCleanz</span>. All Rights Reserved Copyright</p>
+                           <p className="m-0">Copyright ©2026 <span>DeepCleanz</span>. All Rights Reserved Copyright</p>
                         </div>
                      </div>
                   </div>

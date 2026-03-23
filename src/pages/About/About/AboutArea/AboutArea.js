@@ -57,7 +57,7 @@ const AboutArea = () => {
                                     <i className="flaticon-phone-call-1"></i>
                                  </div>
                                  <div className="tp-about-number-text">
-                                    <span className="heading-color-black">Free Consutacy</span>
+                                    <span className="heading-color-black">Free Consultation</span>
                                     <a href="tel:+919363609470" className="heading-color-black">+91 93636 09470</a>
                                  </div>
                               </div>

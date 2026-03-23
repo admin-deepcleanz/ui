@@ -217,7 +217,7 @@
         align-items: center;
         width: 100%;
         @media #{$md,$xs} {
-            justify-content: start !important;
+            justify-content: flex-start !important;
         }
         &-icon {
             height: 70px;

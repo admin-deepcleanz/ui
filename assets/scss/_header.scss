@@ -593,7 +593,7 @@
 }
 .tp-header-right-three {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     & .tp-header-number-three {
         margin-right: 60px;

@@ -1,27 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home/Home/Home';
-import About from './pages/About/About/About';
-import Appointment from './pages/Appointment/Appointment/Appointment';
-import Pricing from './pages/Pricing/Pricing/Pricing';
-// import Team from './pages/Team/Team/Team';
-// import TeamDetails from './pages/TeamDetails/TeamDetails/TeamDetails';
-// import Faq from './pages/Faq/Faq/Faq';
-import Services from './pages/Services/Services/Services';
-import ServicesDetails from './pages/ServicesDetails/ServicesDetails/ServicesDetails';
-// import Projects from './pages/Projects/Projects/Projetcs';
-// import ProjectsDetails from './pages/ProjectsDetails/ProjectsDetails/ProjectsDetails';
-// import BlogsSidebar from './pages/BlogsSidebar/BlogsSidebar/BlogsSidebar';
-// import BlogDetails from './pages/BlogDetails/BlogDetails/BlogDetails';
-import Contact from './pages/Contact/Contact/Contact';
 import { WOW } from 'wowjs';
 import ScrollToTop from './components/ScrollToTop';
 import ContactButtons from './components/ContactButtons/ContactButtons';
-import NotFound from './pages/NotFound/NotFound';
 import VisitTracker from './components/visitTracker';
-// import HomeTwo from './pages/HomeTwo/HomeTwo/HomeTwo';
-// import HomeThree from './pages/HomeThree/HomeThree/HomeThree';
+
+const Home = lazy(() => import('./pages/Home/Home/Home'));
+const About = lazy(() => import('./pages/About/About/About'));
+const Appointment = lazy(() => import('./pages/Appointment/Appointment/Appointment'));
+const Pricing = lazy(() => import('./pages/Pricing/Pricing/Pricing'));
+const Services = lazy(() => import('./pages/Services/Services/Services'));
+const ServicesDetails = lazy(() => import('./pages/ServicesDetails/ServicesDetails/ServicesDetails'));
+const Contact = lazy(() => import('./pages/Contact/Contact/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
+
+const AppLoader = () => <div style={{ minHeight: '100vh', background: '#f5f1e8' }} aria-hidden="true"></div>;
 
 const App = () => {
   // wow animation active
@@ -33,26 +27,19 @@ const App = () => {
     <>
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          {/* <Route path="/homeTwo" element={<HomeTwo />} />
-          <Route path="/homeThree" element={<HomeThree />} /> */}
-          <Route path="/about" element={<About />} />
-          <Route path="/appointment" element={<Appointment />} />
-          <Route path="/pricing" element={<Pricing />} />
-          {/* <Route path="/team" element={<Team />} />
-          <Route path="/teamDetails" element={<TeamDetails />} /> */}
-          {/* <Route path="/faq" element={<Faq />} /> */}
-          <Route path="/services" element={<Services />} />
-          <Route path="/servicesDetails" element={<ServicesDetails />} />
-          {/* <Route path="/projects" element={<Projects />} />
-          <Route path="/projectsDetails" element={<ProjectsDetails />} />
-          <Route path="/blogSidebar" element={<BlogsSidebar />} />
-          <Route path="/blogDetails" element={<BlogDetails />} /> */}
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<AppLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/appointment" element={<Appointment />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/servicesDetails" element={<ServicesDetails />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
       <ContactButtons />
       <VisitTracker />

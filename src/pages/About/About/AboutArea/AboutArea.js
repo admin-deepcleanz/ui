@@ -9,8 +9,8 @@ const AboutArea = () => {
                <div className="row">
                   <div className="col-xl-6 col-lg-8 col-md-10">
                      <div className="tp-about-img-two tp-abouts-img-two position-relative mr-80 wow fadeInUp" data-wow-delay=".4s">
-                        <img src="assets/img/about/about-img-2.jpg" className="img-fluid" alt="img not found" />
-                        <img src="assets/img/about/about-img-3.png" className="img-fluid img-second" alt="img not found" />
+                        <img src="assets/img/about/about-img-2.jpg" className="img-fluid" loading="lazy" alt="img not found" />
+                        <img src="assets/img/about/about-img-3.png" className="img-fluid img-second" loading="lazy" alt="img not found" />
                         <div className="tp-about-img-two-badge">
                            <h3>20</h3>
                            <h5>years <br />Experience</h5>

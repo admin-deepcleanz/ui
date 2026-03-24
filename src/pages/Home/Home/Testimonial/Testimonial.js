@@ -60,19 +60,19 @@ const getInitials = (name) =>
 
 const Testimonial = () => {
    return (
-      <section className="google-reviews-section tp-testimonial-area position-relative pt-120 pb-120">
+      <section className="google-reviews-section tp-testimonial-area position-relative pt-50 pb-70">
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-8 col-lg-10">
                   <div className="section-title-wrapper text-center mb-45 wow fadeInUp" data-wow-delay=".1s">
-                     <h5 className="tp-section-subtitle section__sm__title common-yellow-shape mb-20">Google Reviews</h5>
+                     <h5 className="tp-section-subtitle section__sm__title common-yellow-shape mb-20">What Customers Say</h5>
                      <h2 className="tp-section-title mb-20">Trusted by Homeowners Across Chennai</h2>
-                     <p>Real feedback from customers who booked our home cleaning services.</p>
+                     <p>Recent feedback from customers who booked DeepCleanz for home cleaning.</p>
                   </div>
                </div>
             </div>
 
-            <div className="row justify-content-center mb-50">
+            <div className="row justify-content-center mb-35">
                <div className="col-xl-7 col-lg-9">
                   <div className="google-reviews-section__hero wow fadeInUp" data-wow-delay=".2s">
                      <div className="d-flex flex-wrap justify-content-between align-items-center" style={{ gap: '1rem' }}>
@@ -103,13 +103,13 @@ const Testimonial = () => {
                               rel="noopener noreferrer"
                               className="theme-btn text-white"
                            >
-                              <i className="flaticon-enter"></i> View Google Reviews
+                              <i className="flaticon-enter"></i> Read Reviews on Google
                            </a>
                            <a
                               href="https://g.page/r/CXp6yoLd2ls0EBM/review"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="yellow-btn"
+                              className="yellow-btn premium-home__secondary-action"
                            >
                               <i className="flaticon-enter"></i> Leave a Review
                            </a>

@@ -25,7 +25,7 @@ const HomeSinglePrice = ({ icon_name, title, points = [] }) => {
          )}
 
          <Link to="/appointment" className="btn btn-primary">
-            <i className="flaticon-enter me-2"></i> Get Service
+            <i className="flaticon-enter me-2"></i> Get Quote
          </Link>
       </div>
    );

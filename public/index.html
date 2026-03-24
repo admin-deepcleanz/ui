@@ -5,88 +5,66 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="DeepCleanz – Trusted Cleaning Experts in Chennai!" />
+  <meta name="theme-color" content="#23482b" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="DeepCleanz offers home deep cleaning, kitchen cleaning, bathroom cleaning, sofa cleaning, carpet cleaning, and move-in cleaning services in Chennai." />
+  <title>DeepCleanz | Home Deep Cleaning Services in Chennai</title>
+  <link rel="canonical" href="https://deepcleanz.com/" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <!-- CSS here -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DeepCleanz" />
+  <meta property="og:title" content="DeepCleanz | Home Deep Cleaning Services in Chennai" />
+  <meta property="og:description" content="Trusted home cleaning services in Chennai for kitchens, bathrooms, sofas, carpets, and full-home deep cleaning." />
+  <meta property="og:url" content="https://deepcleanz.com/" />
+  <meta property="og:image" content="https://deepcleanz.com/assets/img/logo/logo-blue.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DeepCleanz | Home Deep Cleaning Services in Chennai" />
+  <meta name="twitter:description" content="Trusted home cleaning services in Chennai for kitchens, bathrooms, sofas, carpets, and full-home deep cleaning." />
+  <meta name="twitter:image" content="https://deepcleanz.com/assets/img/logo/logo-blue.png" />
+
   <link rel="stylesheet" href="assets/css/custom-animation.css">
   <link rel="stylesheet" href="assets/css/fontawesome.min.css">
   <link rel="stylesheet" href="assets/css/flaticon.css">
   <link rel="stylesheet" href="assets/css/default.css">
-  <!-- <link rel="stylesheet" href="assets/css/main.css"> -->
-  <!-- ✅ Redirect from www to non-www -->
+
   <script>
     if (location.hostname === "www.deepcleanz.com") {
       location.replace("https://deepcleanz.com" + location.pathname + location.search + location.hash);
     }
-  <title>Deepcleanz | Professional Cleaning Services</title>
-  <meta name="description"
-    content="Deepcleanz offers expert residential and commercial cleaning services to make your space shine every time." />
-  <meta name="keywords"
-    content="cleaning services, deep cleaning, home cleaning, office cleaning, Deepcleanz, professional cleaning services" />
-  <meta name="robots" content="index, follow" />
+  </script>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Deepcleanz | Professional Cleaning Services" />
-  <meta property="og:description" content="We’re here to make your space shine, every time!" />
-  <meta property="og:image" content="https://deepcleanz.com/assets/img/logo/logo-blue.png" />
-  <meta property="og:url" content="https://deepcleanz.com" />
-  <meta name="twitter:card" content="summary_large_image" />
-      <!-- Event snippet for Contact (1) conversion page -->
-<script>
-  gtag('event', 'conversion', {
+  <script>
+    gtag('event', 'conversion', {
       'send_to': 'AW-17352230243/5CV-CInNr4McEOOKmNJA',
       'value': 1.0,
       'currency': 'INR'
-  });
-</script>
-  <!-- Event snippet for Click to call conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
+    });
+  </script>
+
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17352230243/NoCZCIzNr4McEOOKmNJA',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': callback
+      });
+      return false;
     }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17352230243/NoCZCIzNr4McEOOKmNJA',
-      'value': 1.0,
-      'currency': 'INR',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+  </script>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
 </body>
 
 </html>

@@ -11,8 +11,8 @@
 
 .contact-buttons {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 32px;
+  right: 24px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -65,7 +65,13 @@
   background-color: #1ebd5a;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
+  .contact-buttons {
+    bottom: 16px;
+    right: 12px;
+    gap: 10px;
+  }
+
   .contact-button {
     padding: 12px 14px;
     font-size: 15px;
@@ -73,7 +79,7 @@
   }
 
   .contact-button span {
-    display: none; /* Icon-only on small screens */
+    display: none;
   }
 
   .contact-button img {

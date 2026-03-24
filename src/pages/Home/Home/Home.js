@@ -2,25 +2,27 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from '../../../components/shared/Footer/Footer';
 import Navigation from '../../../components/shared/Navigation/Navigation';
-import AboutArea from './AboutArea/AboutArea';
 import ChoseArea from './ChoseArea/ChoseArea';
 import CtaArea from './CtaArea/CtaArea';
-import FactArea from './FactArea/FactArea';
 import GoogleRatingStrip from './GoogleRatingStrip/GoogleRatingStrip';
 import HeroSection from './HeroSection/HeroSection';
-import PricingArea from './PricingArea/PricingArea';
+import ProofArea from './ProofArea/ProofArea';
 import ServiceArea from './ServiceArea/ServiceArea';
 import Testimonial from './Testimonial/Testimonial';
+import VideosArea from './VideosArea/VideosArea';
+import './premiumHome.css';
 
 const Home = () => {
    const structuredData = {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      name: 'Deepcleanz',
+      '@id': 'https://deepcleanz.com/#business',
+      name: 'DeepCleanz',
       image: 'https://deepcleanz.com/assets/img/logo/logo-blue.png',
-      '@id': 'https://deepcleanz.com',
       url: 'https://deepcleanz.com',
       telephone: '+91 93636 09470',
+      description:
+         'DeepCleanz provides home deep cleaning, kitchen cleaning, bathroom cleaning, sofa cleaning, carpet cleaning, and move-in cleaning services in Chennai.',
       address: {
          '@type': 'PostalAddress',
          streetAddress: '41, South Lock St',
@@ -28,6 +30,23 @@ const Home = () => {
          addressRegion: 'Tamilnadu',
          postalCode: '600085',
          addressCountry: 'IN',
+      },
+      priceRange: '$$',
+      areaServed: {
+         '@type': 'City',
+         name: 'Chennai',
+      },
+      hasOfferCatalog: {
+         '@type': 'OfferCatalog',
+         name: 'Cleaning Services',
+         itemListElement: [
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Home Deep Cleaning' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Kitchen Cleaning' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bathroom Cleaning' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sofa Cleaning' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Carpet Cleaning' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Move-In / Move-Out Cleaning' } },
+         ],
       },
       openingHoursSpecification: {
          '@type': 'OpeningHoursSpecification',
@@ -38,33 +57,36 @@ const Home = () => {
    };
 
    return (
-      <>
+      <div className="premium-home">
          <Helmet>
-            <title>Deepcleanz | Professional Cleaning Services</title>
+            <title>DeepCleanz | Home Deep Cleaning Services in Chennai</title>
             <meta
                name="description"
-               content="Deepcleanz offers top-rated home and commercial cleaning services with flexible scheduling and eco-friendly solutions. Book your cleaning today!"
+               content="Book trusted home deep cleaning services in Chennai with DeepCleanz. Kitchen, bathroom, sofa, carpet, and full-home cleaning with punctual teams and easy booking."
             />
             <meta
                name="keywords"
-               content="cleaning services, home cleaning, office cleaning, deep cleaning, professional cleaners, Deepcleanz, professional cleaning services, bedroom cleaning, kitchen cleaning, bathroom cleaning, carpet cleaning, upholstery cleaning, move-in/move-out cleaning, post-construction cleaning, commercial cleaning, residential cleaning"
+               content="home deep cleaning Chennai, cleaning services Chennai, kitchen cleaning Chennai, bathroom cleaning Chennai, sofa cleaning Chennai, carpet cleaning Chennai, DeepCleanz"
             />
             <meta name="author" content="Deepcleanz" />
-            <meta property="og:title" content="Deepcleanz | Professional Cleaning Services" />
+            <meta name="robots" content="index, follow" />
+            <meta property="og:locale" content="en_IN" />
+            <meta property="og:site_name" content="DeepCleanz" />
+            <meta property="og:title" content="DeepCleanz | Home Deep Cleaning Services in Chennai" />
             <meta
                property="og:description"
-               content="We're here to make your space shine, every time! Reliable and affordable cleaning services for homes and businesses."
+               content="Trusted home cleaning services in Chennai for kitchens, bathrooms, sofas, carpets, and full-home deep cleaning."
             />
             <meta property="og:url" content="https://deepcleanz.com/" />
-            <meta property="og:image" content="/assets/img/logo/logo-blue.png" />
+            <meta property="og:image" content="https://deepcleanz.com/assets/img/logo/logo-blue.png" />
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Deepcleanz | Professional Cleaning Services" />
+            <meta name="twitter:title" content="DeepCleanz | Home Deep Cleaning Services in Chennai" />
             <meta
                name="twitter:description"
-               content="Trusted and affordable cleaning services for your home or office. Satisfaction guaranteed."
+               content="Book trusted home deep cleaning services in Chennai for kitchens, bathrooms, sofas, carpets, and full-home cleaning."
             />
-            <meta name="twitter:image" content="/assets/img/logo/logo-blue.png" />
+            <meta name="twitter:image" content="https://deepcleanz.com/assets/img/logo/logo-blue.png" />
             <link rel="canonical" href="https://deepcleanz.com/" />
             <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
          </Helmet>
@@ -72,14 +94,13 @@ const Home = () => {
          <HeroSection />
          <GoogleRatingStrip />
          <CtaArea />
-         <PricingArea />
-         <FactArea />
+         <ProofArea />
          <ServiceArea />
-         <ChoseArea />
-         <AboutArea />
+         <VideosArea />
          <Testimonial />
+         <ChoseArea />
          <Footer />
-      </>
+      </div>
    );
 };
 

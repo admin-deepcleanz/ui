@@ -23,8 +23,9 @@ const PricingArea = () => {
                <div className="row align-items-center">
                   <div className="col-md-8">
                      <div className="section-title-wrapper mb-55 wow fadeInUp" data-wow-delay=".2s">
-                        <h5 className="tp-section-subtitle common-yellow-shape section__sm__title mb-20">Our Affordable Package</h5>
-                        <h2 className="tp-section-title">Special Pricing Package</h2>
+                        <h5 className="tp-section-subtitle common-yellow-shape section__sm__title mb-20">Popular Packages</h5>
+                        <h2 className="tp-section-title">Choose the Cleaning Service You Need</h2>
+                        <p className="mb-0">Browse our most-requested home cleaning packages and ask for a custom quote.</p>
                      </div>
                   </div>
                   {/* <div className="col-md-4">
@@ -92,7 +93,6 @@ const PricingArea = () => {
                      <HomeSinglePrice
                         icon_name="mop"
                         title="Bathroom Cleaning"
-                        price="599"
                         points={[
                            "Bathroom Machine Deep Cleaning",
                            "Toilet Bowl Cleaning",
@@ -103,7 +103,6 @@ const PricingArea = () => {
                      <HomeSinglePrice
                         icon_name="vacuum-cleaner-1"
                         title="Kitchen Cleaning"
-                        price="1299"
                         points={[
                            "Kitchen Full Deep Cleaning",
                            "Sink and Countertop Cleaning",
@@ -114,7 +113,6 @@ const PricingArea = () => {
                      <HomeSinglePrice
                         icon_name="cleaning-1"
                         title="Bedroom Cleaning"
-                        price="1299"
                         points={[
                            "Bedroom Full Deep Cleaning",
                            "Dry Vacuuming",
@@ -126,7 +124,6 @@ const PricingArea = () => {
                      <HomeSinglePrice
                         icon_name="mop"
                         title="1 BHK Unfurnished House"
-                        price="2499"
                         points={[
                            "1 Bedroom Cleaning",
                            "1 Bathroom Machine Deep Cleaning",
@@ -137,7 +134,6 @@ const PricingArea = () => {
                      <HomeSinglePrice
                         icon_name="cleaning-1"
                         title="2 BHK Unfurnished House"
-                        price="3799"
                         points={[
                            "2 Bedroom Cleaning",
                            "2 Bathroom Machine Deep Cleaning",
@@ -148,7 +144,6 @@ const PricingArea = () => {
                      <HomeSinglePrice
                         icon_name="vacuum-cleaner-1"
                         title="3 BHK Unfurnished House"
-                        price="4799"
                         points={[
                            "3 Bedroom Cleaning",
                            "3 Bathroom Machine Deep Cleaning",

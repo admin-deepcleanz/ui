@@ -19,7 +19,7 @@ const AboutTestimonial = () => {
                   <div className="row align-items-center">
                      <div className="col-xl-5 col-lg-6">
                         <div className="tp-testimonial-img">
-                           <img src="assets/img/testimonial/testimonial-img-3.jpg" alt="img bot found" />
+                           <img src="assets/img/testimonial/testimonial-img-3.jpg" loading="lazy" alt="img bot found" />
                         </div>
                      </div>
                      <div className="col-xl-7 col-lg-6">

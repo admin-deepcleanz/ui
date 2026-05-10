@@ -36,13 +36,14 @@
 /*  01. Theme default
 /*----------------------------------------*/
 /* 1. Theme default css */
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap");
 body {
-  font-family: "Roboto", sans-serif ;
-  font-weight: 400 ;
-  font-style: normal ;
-  color: #064e2a;
+  font-family: "DM Sans", -apple-system, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2d3a38;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .tp-custom-container {
@@ -127,7 +128,7 @@ button:focus, input:focus, input:focus, textarea, textarea:focus {
 input,
 select,
 textarea {
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   font-weight: 400;
   opacity: 1;
 }
@@ -138,7 +139,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   color: #064e2a;
   margin: 0px;
   font-style: normal;
@@ -192,7 +193,7 @@ select {
 
 input,
 select {
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   font-weight: 400;
 }
 
@@ -216,14 +217,14 @@ select {
 * input::-moz-placeholder {
   font-size: 16px;
   opacity: 1;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   font-weight: 400;
 }
 
 * input::placeholder {
   font-size: 16px;
   opacity: 1;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   font-weight: 400;
 }
 
@@ -1621,8 +1622,11 @@ select {
 
 .tp-section-title,
 .tp-section-title-two {
-  font-size: 55px;
-  line-height: 1.18;
+  font-size: 52px;
+  line-height: 1.12;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .tp-section-title,
@@ -1676,47 +1680,51 @@ select {
 }
 
 .yellow-btn {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   border: none;
   outline: none;
   box-shadow: none;
-  height: 60px;
-  line-height: 60px;
-  color: #064e2a;
-  background: #fed10c;
+  height: 52px;
+  line-height: 52px;
+  color: #ffffff;
+  background: #c8913a;
   text-align: center;
-  padding: 0px 38px;
+  padding: 0px 32px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   display: inline-block;
+  border-radius: 10px;
+  letter-spacing: 0.01em;
 }
 .yellow-btn:hover {
-  background: #06ae5a;
+  background: #1a5e5b;
   color: #ffffff;
 }
 
 .theme-btn {
-  font-size: 16px;
+  font-size: 15px;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
   outline: none;
   box-shadow: none;
-  height: 60px;
-  line-height: 60px;
+  height: 52px;
+  line-height: 52px;
   color: #ffffff;
-  background: #06ae5a;
+  background: #1a5e5b;
   text-align: center;
-  padding: 0px 38px;
+  padding: 0px 32px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+  letter-spacing: 0.01em;
 }
 .theme-btn:hover {
-  background: #fed10c;
-  color: #064e2a;
+  background: #c8913a;
+  color: #ffffff;
 }
 
 .yellow-btn:before,
@@ -2570,7 +2578,7 @@ select {
   position: relative;
   padding-left: 13px;
   z-index: 1;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   display: inline-block;
   margin-top: 3px;
 }
@@ -3895,7 +3903,7 @@ select {
   font-size: 36px;
   color: #09150f;
   line-height: 1;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   margin-bottom: 30px;
   overflow: hidden;
   display: inline-block;
@@ -3907,7 +3915,7 @@ select {
   transform: rotate(90deg);
   margin-bottom: 0px;
   text-align: left;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   font-weight: 500;
 }
 
@@ -4490,7 +4498,7 @@ select {
   display: flex;
   align-items: center;
   background: #06ae5a;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 700;
   color: #ffffff;
   font-size: 20px;
@@ -4757,7 +4765,7 @@ select {
   line-height: 1;
   color: #ffffff;
   margin-bottom: 5px;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   font-weight: 700;
 }
 @media (max-width: 767px) {
@@ -4770,7 +4778,7 @@ select {
   color: #ffffff;
   line-height: 1.3;
   margin-bottom: 0px;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   font-weight: 700;
 }
 @media (max-width: 767px) {
@@ -4835,7 +4843,7 @@ select {
 .tp-fact-text-subtitle {
   font-size: 20px;
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   margin-bottom: 0px;
 }
 @media (max-width: 767px) {
@@ -4975,7 +4983,7 @@ select {
 
 .tp-pricing-rate-title {
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   font-size: 60px;
   line-height: 0.5;
 }
@@ -5067,7 +5075,7 @@ select {
   background: #fed10c;
 }
 .tp-pricing-two-rate h3 {
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   font-weight: 700;
   color: #09150f;
   line-height: 1;
@@ -5428,7 +5436,7 @@ select {
 .tp-testimonial-two-form-wrapper .input-field input, .tp-testimonial-two-form-wrapper .input-field select, .tp-testimonial-two-form-wrapper .input-field textarea {
   color: #6a6b71;
   font-size: 15px;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   display: block;
   font-weight: 500;
   height: 60px;
@@ -5880,7 +5888,7 @@ select {
   cursor: pointer;
   display: inline-block;
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tp-prjects-tab-menu .nav-link {
@@ -5987,7 +5995,7 @@ select {
   display: inline-block;
   margin-bottom: 0px;
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -7017,13 +7025,13 @@ select {
   font-size: 24px;
   font-weight: 500;
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
 }
 .tp-footer-info h6 {
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   line-height: 1.6;
   display: inline-flex;
 }
@@ -7081,7 +7089,7 @@ select {
 .tp-footer-news-single h6 {
   font-size: 16px;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Sans", -apple-system, sans-serif;
   color: #ffffff;
   line-height: 27px;
   margin-bottom: 5px;
@@ -7805,7 +7813,7 @@ select {
   color: #626664;
   font-weight: 700;
   margin-right: 30px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 @media (max-width: 767px) {
   .breadcrumb-trail .trail-item {

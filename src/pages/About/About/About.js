@@ -1,96 +1,86 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Footer from '../../../components/shared/Footer/Footer';
 import Navigation from '../../../components/shared/Navigation/Navigation';
-import AboutArea from '../../Home/Home/AboutArea/AboutArea';
-// import AboutBanner from './AboutBanner/AboutBanner';
-// import AboutFaq from './AboutFaq/AboutFaq';
-// import AboutServices from './AboutServices/AboutServices';
-import AboutTestimonial from './AboutTestimonial/AboutTestimonial';
-import AboutBreadcrumb from './Breadcrumb/AboutBreadcrumb';
-import WorkingProcess from './WorkingProcess/WorkingProcess';
-import { Helmet } from 'react-helmet';
+import AboutCta from './AboutCta/AboutCta';
+import AboutHero from './AboutHero/AboutHero';
+import AboutProcess from './AboutProcess/AboutProcess';
+import AboutStats from './AboutStats/AboutStats';
+import AboutStory from './AboutStory/AboutStory';
+import './about.css';
 
 const About = () => {
-    const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Deepcleanz",
-        "image": "https://deepcleanz.com/assets/img/logo/logo-blue.png",
-        "@id": "https://deepcleanz.com",
-        "url": "https://deepcleanz.com",
-        "telephone": "+91 93636 09470",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "41, South Lock St",
-            "addressLocality": "Kotturpuram, Chennai",
-            "addressRegion": "Tamilnadu",
-            "postalCode": "600085",
-            "addressCountry": "IN"
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-            ],
-            "opens": "06:00",
-            "closes": "23:00"
-        },
-        // "sameAs": [
-        //     "https://www.facebook.com/yourpage",
-        //     "https://www.instagram.com/yourpage",
-        //     "https://www.linkedin.com/company/yourpage"
-        // ]
-    };
-    return (
-        <>
-            <Helmet>
-                <title>About Us | Deepcleanz Cleaning Services</title>
-                <meta
-                    name="description"
-                    content="Learn more about Deepcleanz — your trusted partner for professional home and commercial cleaning services. Our commitment is to make your space shine."
-                />
-                <meta
-                    name="keywords"
-                    content="about Deepcleanz, cleaning company, professional cleaners, trusted cleaning service, home cleaning, commercial cleaning"
-                />
-                <meta property="og:title" content="About Us | Deepcleanz Cleaning Services" />
-                <meta
-                    property="og:description"
-                    content="Discover the story behind Deepcleanz and why we are your reliable cleaning service provider."
-                />
-                <meta property="og:url" content="https://deepcleanz.com/about" />
-                <meta property="og:type" content="website" />
-                <meta property="og:image" content="/assets/img/logo/logo-blue.png" />
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="About Us | Deepcleanz Cleaning Services" />
-                <meta
-                    name="twitter:description"
-                    content="Deepcleanz is committed to providing trusted, professional cleaning services for your home and business."
-                />
-                <meta name="twitter:image" content="/assets/img/logo/logo-blue.png" />
-                <link rel="canonical" href="https://deepcleanz.com/about" />
-                <script type="application/ld+json">
-                    {JSON.stringify(structuredData)}
-                </script>
-            </Helmet>
+   const structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': 'https://deepcleanz.com/#business',
+      name: 'DeepCleanz',
+      image: 'https://deepcleanz.com/assets/img/logo/logo-blue.png',
+      url: 'https://deepcleanz.com',
+      telephone: '+91 93636 09470',
+      description:
+         'DeepCleanz provides professional home deep cleaning, kitchen cleaning, bathroom cleaning, sofa cleaning, and move-in cleaning services in Chennai.',
+      address: {
+         '@type': 'PostalAddress',
+         streetAddress: '41, South Lock St',
+         addressLocality: 'Kotturpuram, Chennai',
+         addressRegion: 'Tamilnadu',
+         postalCode: '600085',
+         addressCountry: 'IN',
+      },
+      openingHoursSpecification: [
+         {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '06:00',
+            closes: '23:00',
+         },
+      ],
+   };
 
+   return (
+      <div>
+         <Helmet>
+            <title>About DeepCleanz | Home Cleaning Service in Chennai</title>
+            <meta
+               name="description"
+               content="Learn about DeepCleanz — Chennai's trusted home cleaning service. Founded in 2025, 4.7 Google rating, 300+ homes cleaned, pay after service."
+            />
+            <meta
+               name="keywords"
+               content="about DeepCleanz, cleaning company Chennai, professional home cleaners Chennai, trusted cleaning service"
+            />
+            <meta name="robots" content="index, follow" />
+            <meta property="og:title" content="About DeepCleanz | Home Cleaning Service in Chennai" />
+            <meta
+               property="og:description"
+               content="Founded in 2025, DeepCleanz has earned a 4.7 Google rating across 300+ homes in Chennai. Trained crew, punctual service, pay after cleaning."
+            />
+            <meta property="og:url" content="https://deepcleanz.com/about" />
+            <meta property="og:type" content="website" />
+            <meta property="og:image" content="https://deepcleanz.com/assets/img/social-card.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="About DeepCleanz | Home Cleaning Service in Chennai" />
+            <meta
+               name="twitter:description"
+               content="Founded in 2025, DeepCleanz has earned a 4.7 Google rating across 300+ homes in Chennai."
+            />
+            <meta name="twitter:image" content="https://deepcleanz.com/assets/img/social-card.png" />
+            <link rel="canonical" href="https://deepcleanz.com/about" />
+            <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+         </Helmet>
 
-            <Navigation />
-            <AboutBreadcrumb />
-            <AboutArea />
-            <WorkingProcess />
-            {/* <AboutFaq />
-      <AboutServices /> */}
-            <AboutTestimonial />
-            {/* <AboutBanner /> */}
-            <Footer />
-        </>
-    );
+         <Navigation />
+         <AboutHero />
+         <AboutStory />
+         <AboutStats />
+         <AboutProcess />
+         <AboutCta />
+         <Footer />
+      </div>
+   );
 };
 
 export default About;

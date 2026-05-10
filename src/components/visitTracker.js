@@ -1,157 +1,91 @@
-import React, { useEffect, useState } from 'react';
-import { db } from '../firebase';
-import { collection, addDoc, query, where, getDocs, Timestamp } from 'firebase/firestore';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+const TRACKING_API_URL =
+  process.env.REACT_APP_TRACKING_API_URL || 'http://localhost:3001/api/v1/tracking';
+const PROJECT_KEY = 'deep-cleanz';
+const SESSION_STORAGE_KEY = 'deep-cleanz-tracking-session-id';
+
+function generateSessionId() {
+  if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+    return `sess_${window.crypto.randomUUID()}`;
+  }
+
+  return `sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+}
+
+function getSessionId() {
+  const existingSessionId = window.sessionStorage.getItem(SESSION_STORAGE_KEY);
+
+  if (existingSessionId) {
+    return existingSessionId;
+  }
+
+  const newSessionId = generateSessionId();
+  window.sessionStorage.setItem(SESSION_STORAGE_KEY, newSessionId);
+  return newSessionId;
+}
+
+function getDeviceType() {
+  const userAgent = navigator.userAgent.toLowerCase();
+
+  if (/tablet|ipad/.test(userAgent)) {
+    return 'tablet';
+  }
+
+  if (/mobi|android|iphone|ipod/.test(userAgent)) {
+    return 'mobile';
+  }
+
+  return 'desktop';
+}
+
+function getFormattedDate(date) {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, '0');
+  const day = `${date.getDate()}`.padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
 
 export default function VisitTracker() {
-  const [todayCount, setTodayCount] = useState(null);
-  const [monthCount, setMonthCount] = useState(null);
-  const [totalCount, setTotalCount] = useState(null);
-  const [open, setOpen] = useState(false);
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const isAdmin = urlParams.get('admin') === 'true';
+  const location = useLocation();
 
   useEffect(() => {
-    const trackVisit = async () => {
-      const now = new Date();
-      const todayDate = now.toISOString().substring(0, 10);
+    const now = new Date();
+    const searchParams = new URLSearchParams(location.search);
 
-      await addDoc(collection(db, "visitLogs"), {
-        timestamp: now,
-        date: todayDate,
-        userAgent: navigator.userAgent
-      });
-
-      if (isAdmin) {
-        const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-        const startOfMonthTimestamp = Timestamp.fromDate(firstDayOfMonth);
-
-        const totalSnapshot = await getDocs(collection(db, "visitLogs"));
-        setTotalCount(totalSnapshot.size);
-
-        const todayQuery = query(collection(db, "visitLogs"), where("date", "==", todayDate));
-        const todaySnapshot = await getDocs(todayQuery);
-        setTodayCount(todaySnapshot.size);
-
-        const monthQuery = query(
-          collection(db, "visitLogs"),
-          where("timestamp", ">=", startOfMonthTimestamp)
-        );
-        const monthSnapshot = await getDocs(monthQuery);
-        setMonthCount(monthSnapshot.size);
-      }
+    const payload = {
+      projectKey: PROJECT_KEY,
+      sessionId: getSessionId(),
+      source: searchParams.get('utm_source') || searchParams.get('source') || '',
+      medium: searchParams.get('utm_medium') || searchParams.get('medium') || '',
+      campaign: searchParams.get('utm_campaign') || searchParams.get('campaign') || '',
+      utmTerm: searchParams.get('utm_term') || '',
+      utmContent: searchParams.get('utm_content') || '',
+      gclid: searchParams.get('gclid') || '',
+      page: `${location.pathname}${location.search}`,
+      referrer: document.referrer || '',
+      deviceType: getDeviceType(),
+      userAgent: navigator.userAgent,
+      ip: '',
+      date: getFormattedDate(now),
+      hour: now.getHours()
     };
 
-    trackVisit();
-  }, [isAdmin]);
+    fetch(TRACKING_API_URL, {
+      method: 'POST',
+      headers: {
+        accept: '*/*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload),
+      keepalive: true
+    }).catch((error) => {
+      // Tracking should never interrupt the user journey.
+      console.error('Tracking request failed:', error);
+    });
+  }, [location.pathname, location.search]);
 
-  if (!isAdmin) return null;
-
-  return (
-    <>
-      <div style={floatingButton} onClick={() => setOpen(!open)}>
-        {open ? '🔽' : '📈'}
-      </div>
-
-      <div style={{
-        ...panelStyle,
-        transform: open ? 'translateY(0)' : 'translateY(20px)',
-        opacity: open ? 1 : 0,
-        pointerEvents: open ? 'auto' : 'none'
-      }}>
-        <div style={headerStyle}>Visitor Stats</div>
-        <Stat label="Today's Visitors" count={todayCount} />
-        <Stat label="This Month" count={monthCount} />
-        <Stat label="All Time" count={totalCount} />
-      </div>
-    </>
-  );
+  return null;
 }
-
-function Stat({ label, count }) {
-  const [displayCount, setDisplayCount] = useState(0);
-
-  useEffect(() => {
-    if (count === null) return;
-    let start = 0;
-    const duration = 500;  // ms
-    const increment = count / (duration / 20);
-    const interval = setInterval(() => {
-      start += increment;
-      if (start >= count) {
-        clearInterval(interval);
-        setDisplayCount(count);
-      } else {
-        setDisplayCount(Math.floor(start));
-      }
-    }, 20);
-    return () => clearInterval(interval);
-  }, [count]);
-
-  return (
-    <div style={statRow}>
-      <span style={statLabel}>{label}:</span>
-      <span style={statValue}>{displayCount ?? '...'}</span>
-    </div>
-  );
-}
-
-// Styles
-
-const floatingButton = {
-  position: 'fixed',
-  bottom: '20px',
-  left: '20px',
-  width: '55px',
-  height: '55px',
-  borderRadius: '50%',
-  background: 'linear-gradient(135deg, #00b4db, #0083b0)',
-  color: 'white',
-  fontSize: '26px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  boxShadow: '0 6px 15px rgba(0,0,0,0.4)',
-  cursor: 'pointer',
-  zIndex: 1000,
-  transition: 'all 0.3s ease'
-};
-
-const panelStyle = {
-  position: 'fixed',
-  bottom: '90px',
-  left: '20px',
-  backgroundColor: '#fff',
-  padding: '20px',
-  borderRadius: '16px',
-  boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
-  fontFamily: '"Segoe UI", Roboto, sans-serif',
-  fontSize: '15px',
-  width: '240px',
-  zIndex: 1000,
-  transition: 'all 0.3s ease',
-  border: '1px solid #ddd'
-};
-
-const headerStyle = {
-  marginBottom: '15px',
-  fontSize: '17px',
-  fontWeight: '600',
-  color: '#0083b0',
-  textAlign: 'center'
-};
-
-const statRow = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  marginBottom: '12px'
-};
-
-const statLabel = {
-  color: '#333'
-};
-
-const statValue = {
-  fontWeight: 'bold',
-  color: '#000'
-};

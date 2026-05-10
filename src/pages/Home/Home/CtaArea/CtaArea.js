@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+const PROJECT_KEY = 'deep-cleanz';
+const API_BASE = process.env.REACT_APP_API_BASE_URL;
+
 const initialForm = {
    phone: '',
    service: '',
@@ -25,6 +28,8 @@ const CtaArea = () => {
 
       if (!formData.phone.trim()) {
          newErrors.phone = 'Phone number is required';
+      } else if (!/^[6-9]\d{9}$/.test(formData.phone.trim())) {
+         newErrors.phone = 'Enter a valid 10-digit Indian mobile number';
       }
 
       if (!formData.service) {
@@ -48,20 +53,18 @@ const CtaArea = () => {
       setStatusType('');
 
       try {
-         const response = await fetch('https://hook.eu2.make.com/fbwndbexchu5i2win4z6gpnj1tvw33ob', {
+         const response = await fetch(`${API_BASE}/api/v1/appointments`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData),
+            body: JSON.stringify({ projectKey: PROJECT_KEY, ...formData }),
          });
 
-         if (!response.ok) {
-            throw new Error('Request failed');
-         }
+         if (!response.ok) throw new Error('Request failed');
 
          setFormData(initialForm);
          setStatusType('success');
          setStatusMessage('Thanks. We will call you shortly to confirm the right cleaning service.');
-      } catch (error) {
+      } catch {
          setStatusType('error');
          setStatusMessage('We could not submit your request right now. Please try again or call us directly.');
       } finally {
@@ -86,9 +89,9 @@ const CtaArea = () => {
                      <div className="col-xl-7 col-lg-9 custom-pad-20">
                         <div className="row align-items-center custom-mar-20">
                            <div className="col-lg-4 custom-pad-20">
-                              <div className="tp-appoint wow fadeInUp" data-wow-delay=".3s">
+                              <div className="tp-appoint">
                                  <input
-                                    type="text"
+                                    type="tel"
                                     name="phone"
                                     placeholder="Phone Number"
                                     value={formData.phone}
@@ -98,7 +101,7 @@ const CtaArea = () => {
                               </div>
                            </div>
                            <div className="col-lg-4 custom-pad-20">
-                              <div className="tp-appoint select-field-arrow wow fadeInUp" data-wow-delay=".5s">
+                              <div className="tp-appoint select-field-arrow">
                                  <select name="service" value={formData.service} onChange={handleChange}>
                                     <option value="">Select Service</option>
                                     <option value="Full House Deep Cleaning">Full House Deep Cleaning</option>
@@ -107,12 +110,14 @@ const CtaArea = () => {
                                     <option value="Bathroom Cleaning">Bathroom Cleaning</option>
                                     <option value="Sofa Cleaning">Sofa Cleaning</option>
                                     <option value="Carpet Cleaning">Carpet Cleaning</option>
+                                    <option value="Move-In / Move-Out Cleaning">Move-In / Move-Out Cleaning</option>
+                                    <option value="Post-Renovation Cleaning">Post-Renovation Cleaning</option>
                                  </select>
                                  {errors.service && <p className="text-danger mb-0 mt-2">{errors.service}</p>}
                               </div>
                            </div>
                            <div className="col-lg-4 custom-pad-20">
-                              <div className="tp-appoint wow fadeInUp" data-wow-delay=".6s">
+                              <div className="tp-appoint">
                                  <input
                                     type="text"
                                     name="location"
@@ -126,7 +131,7 @@ const CtaArea = () => {
                         </div>
                      </div>
                      <div className="col-xl-2 col-lg-3 custom-pad-20">
-                        <div className="tp-appoint text-end wow fadeInUp" data-wow-delay=".7s">
+                        <div className="tp-appoint text-end">
                            <button type="submit" className="theme-btn text-white" disabled={isSubmitting}>
                               <i className="flaticon-enter"></i> {isSubmitting ? 'Sending...' : 'Request Call Back'}
                            </button>
@@ -136,7 +141,10 @@ const CtaArea = () => {
                   {statusMessage && (
                      <div className="row mt-20">
                         <div className="col-12">
-                           <p className={statusType === 'success' ? 'mb-0' : 'text-danger mb-0'} style={statusType === 'success' ? { color: '#23482b' } : undefined}>
+                           <p
+                              className="mb-0"
+                              style={{ color: statusType === 'success' ? '#23482b' : '#dc3545' }}
+                           >
                               {statusMessage}
                            </p>
                         </div>

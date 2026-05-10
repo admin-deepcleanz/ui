@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaYoutube } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaPlay, FaYoutube } from 'react-icons/fa';
 
 const videos = [
    {
@@ -17,14 +17,16 @@ const videos = [
 ];
 
 const VideosArea = () => {
+   const [activated, setActivated] = useState({});
+
    return (
       <section className="premium-home__videos pt-60 pb-60">
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-8 col-lg-9">
                   <div className="tp-section-title-wrapper text-center mb-45 wow fadeInUp" data-wow-delay=".1s">
-                     <span className="premium-home__eyebrow">Real Cleaning Videos</span>
-                     <h2 className="tp-section-title">See Our Team in Action</h2>
+                     <span className="premium-home__eyebrow">Watch Us Work</span>
+                     <h2 className="tp-section-title">See Real Cleaning Results</h2>
                      <p className="mb-0">
                         A quick look at real DeepCleanz work before you book.
                      </p>
@@ -37,14 +39,30 @@ const VideosArea = () => {
                   <div className={`col-lg-6 ${index > 0 ? 'premium-home__video-card--extra' : ''}`} key={video.id}>
                      <div className="premium-home__video-card wow fadeInUp" data-wow-delay={`${0.15 + index * 0.15}s`}>
                         <div className="premium-home__video-frame">
-                           <iframe
-                              src={`https://www.youtube.com/embed/${video.id}`}
-                              title={video.title}
-                              loading="lazy"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              referrerPolicy="strict-origin-when-cross-origin"
-                              allowFullScreen
-                           ></iframe>
+                           {activated[video.id] ? (
+                              <iframe
+                                 src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}
+                                 title={video.title}
+                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                 referrerPolicy="strict-origin-when-cross-origin"
+                                 allowFullScreen
+                              />
+                           ) : (
+                              <button
+                                 className="premium-home__video-facade"
+                                 onClick={() => setActivated((prev) => ({ ...prev, [video.id]: true }))}
+                                 aria-label={`Play ${video.title}`}
+                              >
+                                 <img
+                                    src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                                    alt={video.title}
+                                    loading="lazy"
+                                 />
+                                 <span className="premium-home__video-play" aria-hidden="true">
+                                    <FaPlay />
+                                 </span>
+                              </button>
+                           )}
                         </div>
                         <div className="premium-home__video-copy">
                            <span className="premium-home__video-label">{video.label}</span>

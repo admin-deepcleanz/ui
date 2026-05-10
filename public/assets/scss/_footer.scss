@@ -51,7 +51,7 @@
             border-radius: 50%;
             font-size: 16px;
             color: $white;
-            background: #347b58;
+            background: rgba($white, 0.14);
             margin-right: 10px;
             text-align: center;
             &:last-child {
@@ -59,7 +59,7 @@
             }
             &:hover {
                 color: $white;
-                background: #084d2b;
+                background: $theme-blue-dark;
             }
         }
     }
@@ -255,7 +255,7 @@
 .tp-footer-subscribe-shape {
     position: absolute;
     height: 60px;
-    background: #084d2b;
+    background: $theme-blue-dark;
     bottom: 0px;
     left: 0px;
     right: 0px;

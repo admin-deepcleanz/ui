@@ -1,61 +1,67 @@
-import React, { useRef, useState } from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelopeOpen } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaEnvelopeOpen, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
+
+const PROJECT_KEY = 'deep-cleanz';
+const API_BASE = process.env.REACT_APP_API_BASE_URL;
+
+const initialForm = {
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    location: '',
+    message: '',
+};
 
 const ContactForm = () => {
-    const form = useRef();
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-    });
+    const [formData, setFormData] = useState(initialForm);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-
-    const isValidPhone = (phone) => /^[6-9]\d{9}$/.test(phone);
-    const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
+        setError('');
+    };
+
+    const validate = () => {
+        if (!formData.phone.trim()) return 'Phone number is required.';
+        if (!/^[6-9]\d{9}$/.test(formData.phone.trim())) return 'Enter a valid 10-digit Indian mobile number.';
+        if (!formData.service) return 'Please select a service.';
+        if (!formData.location.trim()) return 'Location is required.';
+        if (formData.email.trim() && !/\S+@\S+\.\S+/.test(formData.email)) return 'Enter a valid email address.';
+        return null;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const { name, email, phone, service, location } = formData;
-
-        if (!name || !email || !phone || !service || !location) {
-            setError('Please fill all required fields.');
+        const validationError = validate();
+        if (validationError) {
+            setError(validationError);
             return;
         }
 
-        if (!isValidEmail(email)) {
-            setError('Enter a valid email address.');
-            return;
-        }
+        setIsSubmitting(true);
+        setError('');
+        setSuccess('');
 
-        if (!isValidPhone(phone)) {
-            setError('Enter a valid 10-digit phone number.');
-            return;
-        }
+        try {
+            const response = await fetch(`${API_BASE}/api/v1/appointments`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ projectKey: PROJECT_KEY, ...formData }),
+            });
 
-        await fetch('https://hook.eu2.make.com/fbwndbexchu5i2win4z6gpnj1tvw33ob', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        }).then(
-            () => {
-                setSuccess('Message sent successfully!');
-                setError('');
-                setFormData({ name: '', email: '', phone: '', service: '', message: '', location: '' });
-            },
-            () => {
-                setError('Something went wrong. Please try again.');
-                setSuccess('');
-            }
-        );
+            if (!response.ok) throw new Error('Request failed');
+
+            setSuccess('Message sent successfully!');
+            setFormData(initialForm);
+        } catch {
+            setError('Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -65,7 +71,7 @@ const ContactForm = () => {
                     <div className="col-lg-10">
                         <div className="section-title-wrapper-two mb-50 wow fadeInUp" data-wow-delay=".2s">
                             <h5 className="tp-section-subtitle section__sm__title common-yellow-shape mb-20 heading-color-black">Get Free Estimate</h5>
-                            <h2 className="tp-section-title heading-color-black">If you Have Any Query, Don’t Hesitate <br />Contact with us </h2>
+                            <h2 className="tp-section-title heading-color-black">If you Have Any Query, Don't Hesitate <br />Contact with us</h2>
                         </div>
                     </div>
                 </div>
@@ -112,28 +118,28 @@ const ContactForm = () => {
 
                     {/* Contact Form */}
                     <div className="col-lg-8">
-                        <form ref={form} onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit}>
                             <div className="tp-contact-form">
                                 <div className="row custom-mar-20">
                                     <div className="col-md-6 custom-pad-20">
                                         <div className="tp-contact-form-field mb-20">
-                                            <input type="text" name="name" placeholder="Full name" value={formData.name} onChange={handleChange} />
+                                            <input type="text" name="name" placeholder="Full name (optional)" value={formData.name} onChange={handleChange} />
                                         </div>
                                     </div>
                                     <div className="col-md-6 custom-pad-20">
                                         <div className="tp-contact-form-field mb-20">
-                                            <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} />
+                                            <input type="email" name="email" placeholder="Email Address (optional)" value={formData.email} onChange={handleChange} />
                                         </div>
                                     </div>
                                     <div className="col-md-6 custom-pad-20">
                                         <div className="tp-contact-form-field mb-20">
-                                            <input type="text" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} />
+                                            <input type="tel" name="phone" placeholder="Phone *" value={formData.phone} onChange={handleChange} />
                                         </div>
                                     </div>
                                     <div className="col-md-6 custom-pad-20">
                                         <div className="tp-contact-form-field select-field-arrow mb-20">
                                             <select name="service" value={formData.service} onChange={handleChange}>
-                                                <option value="">Choose Service</option>
+                                                <option value="">Choose Service *</option>
                                                 <option value="Full House Deep Cleaning">Full House Deep Cleaning</option>
                                                 <option value="Kitchen Cleaning">Kitchen Cleaning</option>
                                                 <option value="Bedroom Cleaning">Bedroom Cleaning</option>
@@ -145,18 +151,18 @@ const ContactForm = () => {
                                     </div>
                                     <div className="col-md-12 custom-pad-20">
                                         <div className="tp-contact-form-field mb-20">
-                                            <input type="text" name="location" placeholder="location" value={formData.location} onChange={handleChange} />
+                                            <input type="text" name="location" placeholder="Location *" value={formData.location} onChange={handleChange} />
                                         </div>
                                     </div>
                                     <div className="col-md-12 custom-pad-20">
                                         <div className="tp-contact-form-field mb-20">
-                                            <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange}></textarea>
+                                            <textarea name="message" placeholder="Your Message (optional)" value={formData.message} onChange={handleChange}></textarea>
                                         </div>
                                     </div>
                                     <div className="col-md-12 custom-pad-20">
                                         <div className="tp-contact-form-field">
-                                            <button type="submit" className="theme-btn text-white">
-                                                <i className="flaticon-enter"></i> Send Message
+                                            <button type="submit" className="theme-btn text-white" disabled={isSubmitting}>
+                                                <i className="flaticon-enter"></i> {isSubmitting ? 'Sending...' : 'Send Message'}
                                             </button>
                                         </div>
                                     </div>

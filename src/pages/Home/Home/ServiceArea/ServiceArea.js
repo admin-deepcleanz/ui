@@ -47,16 +47,15 @@ const services = [
 
 const ServiceArea = () => {
    return (
-      <>
-         <section className="tp-services-area premium-home__services">
+      <section className="tp-services-area premium-home__services">
             <div className="tp-custom-container">
                <div className="tp-services-bg pt-80 pb-50 z-index">
                   <div className="container">
                      <div className="row justify-content-center">
                         <div className="col-lg-9">
                            <div className="tp-section-title-wrapper text-center mb-45 wow fadeInUp" data-wow-delay=".1s">
-                              <span className="premium-home__eyebrow">Our Most Requested Services</span>
-                              <h2 className="tp-section-title">Deep Cleaning for the Spaces You Use Every Day</h2>
+                              <span className="premium-home__eyebrow">Services</span>
+                              <h2 className="tp-section-title">Deep Cleaning for Every Corner of Your Home</h2>
                               <p className="mb-0">
                                  From kitchens and bathrooms to full-home and move-in cleaning, we help Chennai homes
                                  feel fresh, hygienic, and ready to use.
@@ -72,6 +71,7 @@ const ServiceArea = () => {
                               icon_name={service.icon_name}
                               title={service.title}
                               content={service.content}
+                              wowDelay={`${0.1 + (index % 4) * 0.1}s`}
                            />
                         ))}
                      </div>
@@ -84,8 +84,7 @@ const ServiceArea = () => {
                </div>
             </div>
          </section>
-      </>
-   );
+      );
 };
 
 export default ServiceArea;

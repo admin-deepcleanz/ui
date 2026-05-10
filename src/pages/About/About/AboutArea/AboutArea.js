@@ -23,7 +23,7 @@ const AboutArea = () => {
                            <h5 className="tp-section-subtitle common-yellow-shape mb-20 heading-color-black">About our Company</h5>
                            <h2 className="tp-section-title heading-color-black">Our Success Cleaning <br />Up your Mess</h2>
                         </div>
-                        <p className="mb-40">Founded in early 2024, Deep Cleanz began as a humble offline cleaning service with one simple mission: to deliver spotless, refreshing spaces that make life easier for our customers. Thanks to our dedication and consistent results, we’ve grown from word-of-mouth recommendations into a reliable name in home cleaning.</p>
+                        <p className="mb-40">Founded in early 2025, Deep Cleanz began as a humble offline cleaning service with one simple mission: to deliver spotless, refreshing spaces that make life easier for our customers. Thanks to our dedication and consistent results, we’ve grown from word-of-mouth recommendations into a reliable name in home cleaning.</p>
                         <div className="row mb-10">
                            <div className="col-sm-6">
                               <div className="tp-about-service mb-30">

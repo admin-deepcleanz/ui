@@ -4,10 +4,10 @@ import Footer from '../../../components/shared/Footer/Footer';
 import Navigation from '../../../components/shared/Navigation/Navigation';
 import ChoseArea from './ChoseArea/ChoseArea';
 import CtaArea from './CtaArea/CtaArea';
-import GoogleRatingStrip from './GoogleRatingStrip/GoogleRatingStrip';
 import HeroSection from './HeroSection/HeroSection';
 import ProofArea from './ProofArea/ProofArea';
 import ServiceArea from './ServiceArea/ServiceArea';
+import StatsBar from './StatsBar/StatsBar';
 import Testimonial from './Testimonial/Testimonial';
 import VideosArea from './VideosArea/VideosArea';
 import './premiumHome.css';
@@ -48,12 +48,14 @@ const Home = () => {
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Move-In / Move-Out Cleaning' } },
          ],
       },
-      openingHoursSpecification: {
-         '@type': 'OpeningHoursSpecification',
-         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-         opens: '06:00',
-         closes: '23:00',
-      },
+      openingHoursSpecification: [
+         {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '06:00',
+            closes: '23:00',
+         },
+      ],
    };
 
    return (
@@ -68,7 +70,7 @@ const Home = () => {
                name="keywords"
                content="home deep cleaning Chennai, cleaning services Chennai, kitchen cleaning Chennai, bathroom cleaning Chennai, sofa cleaning Chennai, carpet cleaning Chennai, DeepCleanz"
             />
-            <meta name="author" content="Deepcleanz" />
+            <meta name="author" content="DeepCleanz" />
             <meta name="robots" content="index, follow" />
             <meta property="og:locale" content="en_IN" />
             <meta property="og:site_name" content="DeepCleanz" />
@@ -78,7 +80,9 @@ const Home = () => {
                content="Trusted home cleaning services in Chennai for kitchens, bathrooms, sofas, carpets, and full-home deep cleaning."
             />
             <meta property="og:url" content="https://deepcleanz.com/" />
-            <meta property="og:image" content="https://deepcleanz.com/assets/img/logo/logo-blue.png" />
+            <meta property="og:image" content="https://deepcleanz.com/assets/img/social-card.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="DeepCleanz | Home Deep Cleaning Services in Chennai" />
@@ -86,19 +90,19 @@ const Home = () => {
                name="twitter:description"
                content="Book trusted home deep cleaning services in Chennai for kitchens, bathrooms, sofas, carpets, and full-home cleaning."
             />
-            <meta name="twitter:image" content="https://deepcleanz.com/assets/img/logo/logo-blue.png" />
+            <meta name="twitter:image" content="https://deepcleanz.com/assets/img/social-card.png" />
             <link rel="canonical" href="https://deepcleanz.com/" />
             <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
          </Helmet>
          <Navigation />
          <HeroSection />
-         <GoogleRatingStrip />
          <CtaArea />
          <ProofArea />
+         <StatsBar />
          <ServiceArea />
+         <ChoseArea />
          <VideosArea />
          <Testimonial />
-         <ChoseArea />
          <Footer />
       </div>
    );

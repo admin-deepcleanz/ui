@@ -6,7 +6,7 @@ const reviews = [
    {
       name: 'Dinesh Nagarajan',
       meta: '2 reviews',
-      date: '2 weeks ago',
+      date: 'April 4, 2026',
       service: '3BHK Full House Cleaning',
       review:
          'Six months ago, I contacted their service for full house cleaning of my 3BHK home. The work was much neater and cleaner than I expected, and they completed it at a very reasonable budget. Recently, I contacted them again for cleaning the three bathrooms in my 3BHK house. Once again, they delivered excellent service and gave complete satisfaction with their work. They arrived exactly at the promised time and completed the work properly.',
@@ -14,7 +14,7 @@ const reviews = [
    {
       name: 'Kalaivani Parthasarathy',
       meta: '6 reviews',
-      date: '2 weeks ago',
+      date: 'April 4, 2026',
       service: 'Full Home Deep Cleaning',
       review:
          'I recently booked a full home deep cleaning service for my home, and I am extremely satisfied with the results. The team arrived on time, brought all necessary equipment, and paid attention to every detail. They cleaned areas that are usually overlooked, and my home feels fresh and hygienic. The staff was polite, professional, and efficient.',
@@ -22,7 +22,7 @@ const reviews = [
    {
       name: 'Balaji Prabhakaran',
       meta: '6 reviews',
-      date: '3 weeks ago',
+      date: 'March 28, 2026',
       service: 'New House Cleaning',
       review:
          'Had cleaning for our new house, excellent cleaning and highly recommended. Sheriff and Raja did a good job in cleaning and helped us well.',
@@ -65,9 +65,9 @@ const Testimonial = () => {
             <div className="row justify-content-center">
                <div className="col-xl-8 col-lg-10">
                   <div className="section-title-wrapper text-center mb-45 wow fadeInUp" data-wow-delay=".1s">
-                     <h5 className="tp-section-subtitle section__sm__title common-yellow-shape mb-20">What Customers Say</h5>
+                     <span className="premium-home__eyebrow mb-20" style={{display:'inline-flex', marginBottom:'16px'}}>Reviews</span>
                      <h2 className="tp-section-title mb-20">Trusted by Homeowners Across Chennai</h2>
-                     <p>Recent feedback from customers who booked DeepCleanz for home cleaning.</p>
+                     <p>Real feedback from customers who booked DeepCleanz for home cleaning.</p>
                   </div>
                </div>
             </div>

@@ -10,7 +10,7 @@ const Contact = () => {
    const structuredData = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Deepcleanz",
+      "name": "DeepCleanz",
       "image": "https://deepcleanz.com/assets/img/logo/logo-blue.png",
       "@id": "https://deepcleanz.com",
       "url": "https://deepcleanz.com",
@@ -45,25 +45,25 @@ const Contact = () => {
    return (
       <>
          <Helmet>
-            <title>Contact Us | Deepcleanz Cleaning Services</title>
+            <title>Contact Us | DeepCleanz Cleaning Services</title>
             <meta
                name="description"
-               content="Get in touch with Deepcleanz for all your cleaning service inquiries. We’re here to help!"
+               content="Get in touch with DeepCleanz for all your cleaning service inquiries. We’re here to help!"
             />
-            <meta name="keywords" content="contact cleaning service, Deepcleanz contact, cleaning inquiry, customer support" />
-            <meta property="og:title" content="Contact Us | Deepcleanz Cleaning Services" />
+            <meta name="keywords" content="contact cleaning service, DeepCleanz contact, cleaning inquiry, customer support" />
+            <meta property="og:title" content="Contact Us | DeepCleanz Cleaning Services" />
             <meta
                property="og:description"
-               content="Reach out to Deepcleanz for quotes, questions, and service support."
+               content="Reach out to DeepCleanz for quotes, questions, and service support."
             />
             <meta property="og:url" content="https://deepcleanz.com/contact" />
             <meta property="og:type" content="website" />
             <meta property="og:image" content="/assets/img/logo/logo-blue.png" />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Contact Us | Deepcleanz Cleaning Services" />
+            <meta name="twitter:title" content="Contact Us | DeepCleanz Cleaning Services" />
             <meta
                name="twitter:description"
-               content="Contact Deepcleanz for professional cleaning services and customer support."
+               content="Contact DeepCleanz for professional cleaning services and customer support."
             />
             <meta name="twitter:image" content="/assets/img/logo/logo-blue.png" />
             <link rel="canonical" href="https://deepcleanz.com/contact" />

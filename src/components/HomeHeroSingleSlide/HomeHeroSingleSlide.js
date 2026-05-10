@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaCheck } from 'react-icons/fa';
 import FadeIn from '../shared/FadeIn/FadeIn';
 
-const trustPoints = ['Punctual local team', 'Pay after service'];
+const trustPoints = ['Pay after service', 'Punctual team', '4.7★ on Google'];
 
 const HomeHeroSingleSlide = () => {
    return (
@@ -10,7 +11,7 @@ const HomeHeroSingleSlide = () => {
          <div className="tp-single-slider tp-slider-height d-flex align-items-center swiper-slide" data-swiper-autoplay="5000">
             <div className="slide-bg" data-background="assets/img/slider/slider-bg-1.jpg"></div>
             <div className="slider-img">
-               <img src="assets/img/slider/slider-img-1.jpg" className="img-fluid" alt="img not found" />
+               <img src="assets/img/slider/slider-img-1.jpg" className="img-fluid" alt="DeepCleanz professional home cleaning team at work" />
             </div>
             <div className="container">
                <div className="row">
@@ -18,9 +19,9 @@ const HomeHeroSingleSlide = () => {
                      <div className="tp-slider-wrapper mt-60 position-relative premium-home__hero-content">
                         <div className="tp-slider z-index">
                            <FadeIn left block>
-                              <h5 className="tp-slider-subtitle section__sm__title common-yellow-shape w-80 mb-25">
+                              <span className="premium-home__eyebrow mb-25" style={{display:'inline-flex'}}>
                                  Professional home cleaning in Chennai
-                              </h5>
+                              </span>
                            </FadeIn>
 
                            <h1 className="tp-slider-title premium-home__hero-title">
@@ -40,6 +41,7 @@ const HomeHeroSingleSlide = () => {
                               <div className="premium-home__hero-points">
                                  {trustPoints.map((point) => (
                                     <span key={point} className="premium-home__hero-point">
+                                       <FaCheck style={{color:'#c8913a', fontSize:'0.75rem', marginRight:'6px'}} />
                                        {point}
                                     </span>
                                  ))}

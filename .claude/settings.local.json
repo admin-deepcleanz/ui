@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node *)",
+      "Bash(sed -i 's|font-family: \"Roboto\", sans-serif|font-family: \"DM Sans\", -apple-system, sans-serif|g' public/assets/css/main.css)",
+      "Bash(sed -i 's|font-family: \"Nunito Sans\", sans-serif|font-family: \"Cormorant Garamond\", Georgia, serif|g' public/assets/css/main.css)",
+      "Bash(grep -E \"\\\\.css$\")",
+      "PowerShell(Get-ChildItem \"D:\\\\Work\\\\Repos\\\\DeepCleanz - ui\\\\ui\\\\public\\\\assets\\\\css\\\\\" | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}} | Sort-Object KB -Descending)"
+    ]
+  }
+}

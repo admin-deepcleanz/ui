@@ -24,7 +24,7 @@ const AboutArea = () => {
                            <h2 className="tp-section-title">Our Success Cleaning <br />Up your Mess</h2>
                         </div>
                         <p className="mb-40">
-                           Founded in early 2024, Deep Cleanz began as a humble offline cleaning service with one simple
+                           Founded in early 2025, Deep Cleanz began as a humble offline cleaning service with one simple
                            mission: to deliver spotless, refreshing spaces that make life easier for our customers. Thanks
                            to our dedication and consistent results, we&apos;ve grown from word-of-mouth recommendations into
                            a reliable name in home cleaning.

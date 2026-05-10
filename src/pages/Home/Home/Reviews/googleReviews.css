@@ -1,6 +1,5 @@
 .google-rating-strip {
-   background:
-      linear-gradient(180deg, #f4efe4 0%, #f1ece1 100%);
+   background: #faf7f2;
 }
 
 .google-rating-strip__card {
@@ -13,10 +12,10 @@
    margin-top: -26px;
    position: relative;
    z-index: 2;
-   border: 1px solid rgba(91, 112, 82, 0.10);
+   border: 1px solid rgba(31, 107, 104, 0.10);
    border-radius: 24px;
-   background: linear-gradient(180deg, rgba(253, 250, 244, 0.96), rgba(248, 244, 235, 0.94));
-   box-shadow: 0 18px 44px rgba(48, 70, 53, 0.10);
+   background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 247, 245, 0.94));
+   box-shadow: 0 18px 44px rgba(31, 83, 80, 0.10);
    backdrop-filter: blur(10px);
 }
 
@@ -34,7 +33,7 @@
    align-items: center;
    justify-content: center;
    border-radius: 18px;
-   background: #f3f0ea;
+   background: #eef5f3;
    color: #4285f4;
    font-size: 1.45rem;
    box-shadow: inset 0 0 0 1px rgba(66, 133, 244, 0.08);
@@ -64,20 +63,18 @@
 }
 
 .google-reviews-section {
-   background:
-      linear-gradient(180deg, #ecefe9 0%, #e8ede6 100%);
+   background: #ffffff;
 }
 
 .google-reviews-section__hero {
    position: relative;
    overflow: hidden;
-   border: 1px solid rgba(91, 112, 82, 0.10);
-   border-radius: 28px;
+   border: 1px solid rgba(200, 145, 58, 0.16);
+   border-top: 3px solid #c8913a;
+   border-radius: 20px;
    padding: 34px;
-   background:
-      linear-gradient(135deg, rgba(252, 249, 243, 0.98), rgba(245, 241, 232, 0.96)),
-      #fbf8f1;
-   box-shadow: 0 22px 60px rgba(48, 70, 53, 0.10);
+   background: #faf7f2;
+   box-shadow: 0 8px 32px rgba(15, 46, 44, 0.07);
 }
 
 .google-reviews-section__hero::before {
@@ -105,7 +102,7 @@
    align-items: center;
    justify-content: center;
    border-radius: 18px;
-   background: #f3f0ea;
+   background: #eef5f3;
    color: #4285f4;
    font-size: 1.55rem;
 }
@@ -136,18 +133,18 @@
 
 .google-review-card {
    height: 100%;
-   border: 1px solid rgba(91, 112, 82, 0.10);
-   border-radius: 24px;
-   padding: 24px;
-   background: linear-gradient(180deg, rgba(252, 249, 243, 0.96), rgba(247, 242, 234, 0.94));
-   box-shadow: 0 14px 34px rgba(48, 70, 53, 0.07);
+   border: 1px solid rgba(200, 145, 58, 0.12);
+   border-radius: 20px;
+   padding: 28px;
+   background: #faf7f2;
+   box-shadow: 0 4px 20px rgba(15, 46, 44, 0.05);
    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .google-review-card:hover {
    transform: translateY(-4px);
-   box-shadow: 0 22px 44px rgba(48, 70, 53, 0.11);
-   border-color: rgba(66, 133, 244, 0.26);
+   box-shadow: 0 16px 40px rgba(15, 46, 44, 0.10);
+   border-color: rgba(200, 145, 58, 0.30);
 }
 
 .google-review-card__header {
@@ -200,7 +197,7 @@
    margin-bottom: 0.95rem;
    padding: 7px 12px;
    border-radius: 999px;
-   background: rgba(236, 231, 221, 0.85);
+   background: rgba(228, 184, 76, 0.12);
    color: #3c4043;
    font-size: 0.82rem;
    font-weight: 600;

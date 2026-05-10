@@ -65,6 +65,42 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+## GitHub CI/CD
+
+This repo includes a GitHub Actions workflow at [.github/workflows/ci-cd.yml](/D:/Work/Repos/DeepCleanz%20-%20ui/ui/.github/workflows/ci-cd.yml) that:
+
+- runs on pull requests to `main`
+- installs dependencies with `npm ci`
+- runs the test suite
+- builds the production app
+- deploys the generated `build/` folder to a remote server on pushes to `main`
+
+### Required GitHub secrets
+
+Add these repository secrets before enabling deployment:
+
+- `DEPLOY_HOST`: remote server hostname or IP
+- `DEPLOY_USER`: SSH username
+- `DEPLOY_SSH_PRIVATE_KEY`: private SSH key used by GitHub Actions
+- `DEPLOY_PATH`: target directory on the remote server where static files should be published
+
+### Optional GitHub secrets and variables
+
+- `DEPLOY_PORT`: custom SSH port, defaults to `22`
+- `DEPLOY_POST_COMMAND`: command to run on the server after upload, for example `sudo systemctl reload nginx`
+- repository variable `REACT_APP_API_BASE_URL`: production API base URL injected at build time
+
+This workflow is currently configured to skip SSH host key verification during deploy. That removes the need for `DEPLOY_KNOWN_HOSTS`, but it is less secure than verifying the server fingerprint.
+
+### Typical server setup
+
+Point your web server document root to the same directory as `DEPLOY_PATH`, or have your server serve files from that directory. For an Nginx-based static site, deployment often looks like:
+
+- `DEPLOY_PATH=/var/www/deepcleanz`
+- `DEPLOY_POST_COMMAND=sudo systemctl reload nginx`
+
+If you want zero-downtime releases with a symlink-based deploy layout, we can tighten this workflow further once you share the target server setup.
+
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

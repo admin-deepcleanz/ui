@@ -1,5 +1,14 @@
 User-agent: *
-Disallow:
 Allow: /
+Disallow: /static/
+Disallow: /*.json$
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
 
 Sitemap: https://deepcleanz.com/sitemap.xml

@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from '../../../components/shared/Footer/Footer';
 import Navigation from '../../../components/shared/Navigation/Navigation';
-import ChoseArea from './ChoseArea/ChoseArea';
 import CtaArea from './CtaArea/CtaArea';
 import HeroSection from './HeroSection/HeroSection';
 import ProofArea from './ProofArea/ProofArea';
@@ -100,7 +99,6 @@ const Home = () => {
          <ProofArea />
          <StatsBar />
          <ServiceArea />
-         <ChoseArea />
          <VideosArea />
          <Testimonial />
          <Footer />
